@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Smile Dental Care – AK Dev Road, Guwahati</title>
+<meta name="description" content="Smile Dental Care – Premium dental services in Guwahati. Book appointments online. Located on AK Dev Road, Katahbari. Call +918822363706."/>
+<meta name="keywords" content="dentist Guwahati, dental clinic Guwahati, Smile Dental Care, teeth whitening Guwahati, dental implants, orthodontics Guwahati"/>
+<meta property="og:title" content="Smile Dental Care – Guwahati"/>
+<meta property="og:description" content="Expert dental care in the heart of Guwahati. Book your appointment today."/>
+<meta property="og:type" content="website"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --teal:      #1a6b6b;
+    --teal-dark: #0f4040;
+    --teal-light:#e8f4f4;
+    --gold:      #b5924c;
+    --gold-light:#f5ead8;
+    --cream:     #faf8f4;
+    --white:     #ffffff;
+    --ink:       #1c1c1e;
+    --ink-soft:  #4a4a4f;
+    --border:    rgba(26,107,107,0.15);
+    --shadow:    0 8px 40px rgba(15,64,64,0.10);
+    --radius:    16px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* ── LANGUAGE TOGGLE ── */
+  .lang-bar {
+    background: var(--teal-dark);
+    color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 40px;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+  }
+  .lang-bar button {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.35);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+  }
+  .lang-bar button.active, .lang-bar button:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250,248,244,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 40px;
+    transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: var(--shadow); }
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px; text-decoration: none;
+  }
+  .nav-logo .tooth-icon { width: 38px; height: 38px; }
+  .nav-logo-text { line-height: 1.1; }
+  .nav-logo-text .brand { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 1.35rem; color: var(--teal-dark); letter-spacing: 0.02em; }
+  .nav-logo-text .tagline { font-size: 0.65rem; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--ink-soft); font-size: 0.88rem; font-weight: 400; letter-spacing: 0.03em; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--teal); }
+  .nav-cta {
+    background: var(--teal);
+    color: #fff;
+    border: none; border-radius: 50px;
+    padding: 11px 26px;
+    font-size: 0.88rem; font-weight: 500;
+    cursor: pointer; letter-spacing: 0.04em;
+    transition: background 0.2s, transform 0.2s;
+    text-decoration: none;
+  }
+  .nav-cta:hover { background: var(--teal-dark); transform: translateY(-1px); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--ink); border-radius: 2px; transition: all 0.3s; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 92vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    padding: 80px 40px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 70% at 80% 50%, rgba(26,107,107,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-text { position: relative; z-index: 1; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--gold-light);
+    border: 1px solid rgba(181,146,76,0.3);
+    border-radius: 50px;
+    padding: 7px 16px;
+    font-size: 0.75rem; font-weight: 500;
+    color: var(--gold);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 28px;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-badge span { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    line-height: 1.08;
+    color: var(--teal-dark);
+    margin-bottom: 24px;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero-sub {
+    font-size: 1.05rem; font-weight: 300; color: var(--ink-soft);
+    line-height: 1.75; max-width: 480px;
+    margin-bottom: 36px;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+  .hero-actions {
+    display: flex; gap: 16px; flex-wrap: wrap;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+  .btn-primary {
+    background: var(--teal); color: #fff;
+    border: none; border-radius: 50px;
+    padding: 14px 32px; font-size: 0.95rem; font-weight: 500;
+    cursor: pointer; text-decoration: none;
+    transition: all 0.25s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-primary:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(15,64,64,0.25); }
+  .btn-outline {
+    background: transparent; color: var(--teal);
+    border: 1.5px solid var(--teal); border-radius: 50px;
+    padding: 13px 28px; font-size: 0.95rem; font-weight: 500;
+    cursor: pointer; text-decoration: none;
+    transition: all 0.25s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-outline:hover { background: var(--teal-light); }
+  .hero-stats {
+    display: flex; gap: 32px; margin-top: 48px;
+    animation: fadeUp 0.6s 0.4s ease both;
+  }
+  .stat { }
+  .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 600; color: var(--teal-dark); line-height: 1; }
+  .stat-lbl { font-size: 0.75rem; color: var(--ink-soft); margin-top: 4px; letter-spacing: 0.04em; }
+
+  .hero-visual {
+    position: relative; z-index: 1;
+    display: flex; align-items: center; justify-content: center;
+    animation: fadeIn 0.8s 0.2s ease both;
+  }
+  .hero-card {
+    background: var(--white);
+    border-radius: 28px;
+    padding: 40px;
+    box-shadow: var(--shadow), 0 2px 0 var(--border);
+    width: 100%; max-width: 420px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, var(--teal), var(--gold));
+  }
+  .hero-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--teal-dark); margin-bottom: 20px; }
+  .hours-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--border); }
+  .hours-row:last-of-type { border-bottom: none; }
+  .hours-label { font-size: 0.88rem; color: var(--ink-soft); display: flex; align-items: center; gap: 8px; }
+  .hours-label svg { color: var(--gold); }
+  .hours-time { font-size: 0.88rem; font-weight: 500; color: var(--teal-dark); }
+  .open-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: #e8f8ee; color: #1a7a3c;
+    font-size: 0.72rem; font-weight: 500;
+    padding: 5px 12px; border-radius: 50px;
+    margin-top: 18px; letter-spacing: 0.05em;
+  }
+  .open-badge .dot { width: 6px; height: 6px; background: #1a7a3c; border-radius: 50%; animation: pulse 1.5s infinite; }
+  .hero-card-phone {
+    display: flex; align-items: center; gap: 10px;
+    margin-top: 18px;
+    background: var(--teal-light);
+    border-radius: 12px;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .hero-card-phone:hover { background: #d0e9e9; }
+  .hero-card-phone span { font-size: 0.9rem; font-weight: 500; color: var(--teal-dark); }
+
+  /* decorative teeth SVG BG */
+  .deco-tooth {
+    position: absolute;
+    opacity: 0.04;
+    pointer-events: none;
+  }
+
+  /* ── SECTIONS GENERAL ── */
+  section { padding: 90px 40px; }
+  .section-label {
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 12px; display: block;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400; font-size: clamp(2rem, 3.5vw, 3rem);
+    color: var(--teal-dark); line-height: 1.15; margin-bottom: 16px;
+  }
+  .section-sub { font-size: 1rem; color: var(--ink-soft); max-width: 560px; line-height: 1.75; margin-bottom: 48px; }
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── SERVICES ── */
+  #services { background: var(--white); }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; }
+  .service-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    transition: all 0.3s;
+    cursor: default;
+    position: relative; overflow: hidden;
+  }
+  .service-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--teal), var(--gold));
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.35s ease;
+  }
+  .service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: transparent; }
+  .service-card:hover::after { transform: scaleX(1); }
+  .service-icon { font-size: 2rem; margin-bottom: 18px; }
+  .service-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--teal-dark); margin-bottom: 10px; }
+  .service-desc { font-size: 0.88rem; color: var(--ink-soft); line-height: 1.7; }
+
+  /* ── WHY US ── */
+  #why { background: var(--teal-dark); color: #fff; }
+  #why .section-title { color: #fff; }
+  #why .section-label { color: var(--gold); }
+  #why .section-sub { color: rgba(255,255,255,0.65); }
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .why-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius);
+    padding: 32px;
+    transition: background 0.3s;
+  }
+  .why-card:hover { background: rgba(255,255,255,0.12); }
+  .why-card-icon { font-size: 1.8rem; margin-bottom: 14px; }
+  .why-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: #fff; margin-bottom: 10px; }
+  .why-card p { font-size: 0.88rem; color: rgba(255,255,255,0.65); line-height: 1.7; }
+
+  /* ── APPOINTMENT ── */
+  #appointment { background: var(--cream); }
+  .appointment-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start; }
+  .appt-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--teal-dark); margin-bottom: 20px; }
+  .appt-info p { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.75; margin-bottom: 28px; }
+  .appt-contact { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
+  .appt-contact a {
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none; color: var(--ink-soft);
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+  .appt-contact a:hover { color: var(--teal); }
+  .appt-contact .icon-circle {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: var(--teal-light);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 1rem;
+  }
+  .whatsapp-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #25d366; color: #fff;
+    border: none; border-radius: 50px;
+    padding: 13px 28px; font-size: 0.92rem; font-weight: 500;
+    cursor: pointer; text-decoration: none;
+    transition: all 0.25s;
+  }
+  .whatsapp-btn:hover { background: #1ebe5c; transform: translateY(-2px); }
+
+  /* Form */
+  .appt-form {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+  }
+  .appt-form h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; color: var(--teal-dark); margin-bottom: 28px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .form-group { display: flex; flex-direction: column; gap: 7px; margin-bottom: 16px; }
+  .form-group label { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.06em; color: var(--ink-soft); text-transform: uppercase; }
+  .form-group input, .form-group select, .form-group textarea {
+    background: var(--cream);
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 0.92rem; font-family: 'DM Sans', sans-serif;
+    color: var(--ink);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+    width: 100%;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(26,107,107,0.12);
+  }
+  .form-group textarea { resize: vertical; min-height: 90px; }
+  .form-submit {
+    width: 100%;
+    background: var(--teal); color: #fff;
+    border: none; border-radius: 50px;
+    padding: 15px; font-size: 1rem; font-weight: 500;
+    cursor: pointer; letter-spacing: 0.04em;
+    transition: all 0.25s;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+  }
+  .form-submit:hover { background: var(--teal-dark); transform: translateY(-1px); }
+  .form-note { font-size: 0.75rem; color: var(--ink-soft); text-align: center; margin-top: 14px; }
+  .success-msg {
+    display: none;
+    background: #e8f8ee; border: 1px solid #a8ddb8;
+    border-radius: 12px; padding: 20px;
+    color: #1a7a3c; text-align: center;
+    font-size: 0.95rem; margin-top: 16px;
+  }
+
+  /* Google Calendar Embed */
+  .cal-section { margin-top: 20px; }
+  .cal-section label { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.06em; color: var(--ink-soft); text-transform: uppercase; display: block; margin-bottom: 10px; }
+  .cal-embed-wrap {
+    border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden;
+  }
+  .cal-embed-wrap iframe { display: block; width: 100%; height: 300px; border: none; }
+
+  /* ── LOCATION ── */
+  #location { background: var(--white); }
+  .location-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 48px; align-items: start; }
+  .location-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--teal-dark); margin-bottom: 20px; }
+  .info-item { display: flex; gap: 14px; margin-bottom: 20px; }
+  .info-icon { width: 42px; height: 42px; background: var(--teal-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+  .info-item-text strong { display: block; font-size: 0.85rem; font-weight: 500; color: var(--ink); margin-bottom: 3px; }
+  .info-item-text span { font-size: 0.85rem; color: var(--ink-soft); line-height: 1.6; }
+  .map-wrap { border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); }
+  .map-wrap iframe { display: block; width: 100%; height: 400px; border: none; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--teal-dark);
+    color: rgba(255,255,255,0.75);
+    padding: 60px 40px 30px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+  .footer-brand .brand-name { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; color: #fff; margin-bottom: 12px; }
+  .footer-brand p { font-size: 0.85rem; line-height: 1.75; max-width: 280px; }
+  footer h4 { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+  footer ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  footer ul li a { text-decoration: none; color: rgba(255,255,255,0.65); font-size: 0.88rem; transition: color 0.2s; }
+  footer ul li a:hover { color: #fff; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .footer-bottom p { font-size: 0.78rem; }
+  .social-links { display: flex; gap: 12px; }
+  .social-link {
+    width: 36px; height: 36px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none; color: #fff; font-size: 0.9rem;
+    transition: all 0.2s;
+  }
+  .social-link:hover { background: var(--gold); border-color: var(--gold); }
+
+  /* ── SCROLL TO TOP ── */
+  #scrollTop {
+    position: fixed; bottom: 28px; right: 28px; z-index: 200;
+    width: 46px; height: 46px;
+    background: var(--teal); color: #fff;
+    border: none; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; font-size: 1.1rem;
+    box-shadow: 0 4px 16px rgba(15,64,64,0.3);
+    opacity: 0; transform: translateY(16px);
+    transition: all 0.3s;
+    pointer-events: none;
+  }
+  #scrollTop.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+  #scrollTop:hover { background: var(--teal-dark); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:0.5;transform:scale(1.4);} }
+  @keyframes floatY { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
+
+  .hero-card { animation: floatY 5s ease-in-out infinite; }
+
+  /* ── ASSAMESE CONTENT ── */
+  .as { display: none; }
+  body.lang-as .en { display: none; }
+  body.lang-as .as { display: block; }
+  body.lang-as span.as { display: inline; }
+  body.lang-as span.en { display: none; }
+  body.lang-as a.as { display: inline-flex; }
+  body.lang-as a.en { display: none; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 900px) {
+    nav { padding: 16px 20px; }
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .hamburger { display: flex; }
+    .mobile-menu {
+      display: none;
+      position: fixed; inset: 0; z-index: 99;
+      background: var(--cream);
+      flex-direction: column; align-items: center; justify-content: center; gap: 32px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: 'Cormorant Garamond', serif; font-size: 2rem; text-decoration: none; color: var(--teal-dark); }
+    .mobile-menu .close-btn { position: absolute; top: 20px; right: 24px; font-size: 1.8rem; cursor: pointer; background: none; border: none; color: var(--ink); }
+    .hero { grid-template-columns: 1fr; padding: 40px 20px 50px; min-height: auto; gap: 40px; }
+    .hero-visual { order: -1; }
+    .hero-card { max-width: 100%; }
+    .hero-stats { gap: 20px; }
+    section { padding: 60px 20px; }
+    .lang-bar { padding: 8px 20px; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .appointment-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .location-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; }
+  }
+  @media (max-width: 500px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Language Bar -->
+<div class="lang-bar">
+  <span style="opacity:0.7">🌐</span>
+  <button id="btn-en" class="active" onclick="setLang('en')">English</button>
+  <button id="btn-as" onclick="setLang('as')">অসমীয়া</button>
+</div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-btn" onclick="toggleMenu()">✕</button>
+  <a href="#services" onclick="toggleMenu()"><span class="en">Services</span><span class="as">সেৱাসমূহ</span></a>
+  <a href="#why" onclick="toggleMenu()"><span class="en">Why Us</span><span class="as">কিয় আমাক</span></a>
+  <a href="#appointment" onclick="toggleMenu()"><span class="en">Book Appointment</span><span class="as">এপয়েণ্টমেণ্ট</span></a>
+  <a href="#location" onclick="toggleMenu()"><span class="en">Location</span><span class="as">ঠিকনা</span></a>
+</div>
+
+<!-- Nav -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <svg class="tooth-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 4C14 4 8 8 8 15c0 4 1.5 6.5 3 9.5 1.5 3 2 7.5 3.5 9.5.5.7 1.2 1.2 2 1 1.2-.3 1.5-2.5 2-4.5.5-2 1-4 1.5-4s1 2 1.5 4c.5 2 .8 4.2 2 4.5.8.2 1.5-.3 2-1 1.5-2 2-6.5 3.5-9.5 1.5-3 3-5.5 3-9.5 0-7-6-11-12-11z" fill="#1a6b6b"/>
+      <path d="M15 10c-2 0-3.5 1-4 2.5" stroke="#b5924c" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <div class="nav-logo-text">
+      <div class="brand">Smile Dental Care</div>
+      <div class="tagline"><span class="en">Your Smile, Our Passion</span><span class="as">আপোনাৰ হাঁহি, আমাৰ আবেগ</span></div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services"><span class="en">Services</span><span class="as">সেৱাসমূহ</span></a></li>
+    <li><a href="#why"><span class="en">Why Us</span><span class="as">কিয় আমাক</span></a></li>
+    <li><a href="#appointment"><span class="en">Appointment</span><span class="as">এপয়েণ্টমেণ্ট</span></a></li>
+    <li><a href="#location"><span class="en">Location</span><span class="as">ঠিকনা</span></a></li>
+  </ul>
+  <a href="#appointment" class="nav-cta en">Book Appointment</a>
+  <a href="#appointment" class="nav-cta as">এপয়েণ্টমেণ্ট বুক কৰক</a>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <!-- Decorative background tooth -->
+  <svg class="deco-tooth" style="right:-80px;top:50%;transform:translateY(-50%);width:500px" viewBox="0 0 200 200" fill="none">
+    <path d="M100 10C60 10 20 35 20 80c0 20 8 35 15 50 8 16 10 40 18 52 2.5 3.5 6 6 10 5 6-1.5 7.5-12.5 10-22.5 2.5-10 5-20 7.5-20s5 10 7.5 20c2.5 10 4 21 10 22.5 4 1 7.5-1.5 10-5 8-12 10-36 18-52 7-15 15-30 15-50 0-45-40-70-80-70z" fill="#1a6b6b"/>
+  </svg>
+
+  <div class="hero-text">
+    <div class="hero-badge"><span></span><span class="en">Premium Dental Care · Guwahati</span><span class="as">প্ৰিমিয়াম দাঁতৰ চিকিৎসা · গুৱাহাটী</span></div>
+    <h1>
+      <span class="en">Where Every<br/><em>Smile</em> is<br/>Crafted with Care</span>
+      <span class="as">প্ৰতিটো <em>হাঁহি</em><br/>সযতনে<br/>গঢ়া হয়</span>
+    </h1>
+    <p class="hero-sub en">Experience gentle, expert dental care right in the heart of Katahbari, Guwahati. We blend modern techniques with a warm, personal touch to give you the smile you deserve.</p>
+    <p class="hero-sub as">গুৱাহাটীৰ কটাহবাৰীত আধুনিক আৰু বিশেষজ্ঞ দাঁতৰ চিকিৎসা অনুভৱ কৰক। আমি আধুনিক প্ৰযুক্তি আৰু উষ্ণ ব্যক্তিগত স্পৰ্শৰ সমন্বয়ৰে আপোনাক সেৰা হাঁহি দিওঁ।</p>
+    <div class="hero-actions">
+      <a href="#appointment" class="btn-primary en">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Book Appointment
+      </a>
+      <a href="#appointment" class="btn-primary as">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        এপয়েণ্টমেণ্ট বুক কৰক
+      </a>
+      <a href="tel:+918822363706" class="btn-outline en">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .96h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Call Now
+      </a>
+      <a href="tel:+918822363706" class="btn-outline as">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .96h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        ফোন কৰক
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">500+</div>
+        <div class="stat-lbl en">Happy Patients</div>
+        <div class="stat-lbl as">সন্তুষ্ট ৰোগী</div>
+      </div>
+      <div class="stat" style="border-left:1px solid var(--border);padding-left:32px">
+        <div class="stat-num">10+</div>
+        <div class="stat-lbl en">Years Experience</div>
+        <div class="stat-lbl as">বছৰৰ অভিজ্ঞতা</div>
+      </div>
+      <div class="stat" style="border-left:1px solid var(--border);padding-left:32px">
+        <div class="stat-num">20+</div>
+        <div class="stat-lbl en">Treatments Offered</div>
+        <div class="stat-lbl as">চিকিৎসা পদ্ধতি</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-card">
+      <div class="hero-card-title en">Clinic Hours</div>
+      <div class="hero-card-title as">ক্লিনিকৰ সময়</div>
+      <div class="hours-row">
+        <span class="hours-label">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b5924c" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span class="en">Morning Session</span><span class="as">পুৱাৰ সেচন</span>
+        </span>
+        <span class="hours-time">10:00 AM – 2:00 PM</span>
+      </div>
+      <div class="hours-row">
+        <span class="hours-label">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b5924c" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span class="en">Evening Session</span><span class="as">সন্ধিয়াৰ সেচন</span>
+        </span>
+        <span class="hours-time">4:00 PM – 8:00 PM</span>
+      </div>
+      <div class="open-badge" id="openStatus">
+        <span class="dot"></span>
+        <span id="openText">Checking...</span>
+      </div>
+      <a href="tel:+918822363706" class="hero-card-phone">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a6b6b" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .96h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <span>+91 88223 63706</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <span class="section-label reveal en">What We Offer</span>
+  <span class="section-label reveal as">আমাৰ সেৱা</span>
+  <h2 class="section-title reveal en">Comprehensive Dental<br/>Services for All Ages</h2>
+  <h2 class="section-title reveal as">সকলো বয়সৰ বাবে<br/>সম্পূৰ্ণ দাঁতৰ চিকিৎসা</h2>
+  <p class="section-sub reveal en">From routine check-ups to advanced cosmetic procedures, we offer a full range of dental treatments tailored to your needs.</p>
+  <p class="section-sub reveal as">নিয়মিত পৰীক্ষাৰ পৰা আধুনিক কছমেটিক চিকিৎসালৈকে, আমি আপোনাৰ প্ৰয়োজন অনুযায়ী সম্পূৰ্ণ দাঁতৰ চিকিৎসা প্ৰদান কৰোঁ।</p>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">🦷</div>
+      <div class="service-title en">General Dentistry</div>
+      <div class="service-title as">সাধাৰণ দন্তচিকিৎসা</div>
+      <p class="service-desc en">Regular cleanings, fillings, extractions and preventive care to keep your teeth healthy for life.</p>
+      <p class="service-desc as">নিয়মিত পৰিষ্কাৰ, ফিলিং, নিষ্কাশন আৰু প্ৰতিৰোধমূলক সেৱা।</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">✨</div>
+      <div class="service-title en">Teeth Whitening</div>
+      <div class="service-title as">দাঁত বগা কৰা</div>
+      <p class="service-desc en">Professional-grade whitening treatments that brighten your smile safely and effectively.</p>
+      <p class="service-desc as">পেছাদাৰী দাঁত বগা কৰাৰ চিকিৎসা যি আপোনাৰ হাঁহিক উজ্জ্বল কৰি তোলে।</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🔧</div>
+      <div class="service-title en">Orthodontics</div>
+      <div class="service-title as">অৰ্থোডণ্টিক্স</div>
+      <p class="service-desc en">Braces and aligners to correct misaligned teeth and give you a perfect, confident smile.</p>
+      <p class="service-desc as">বেঁকা দাঁত সোজা কৰিবলৈ ব্ৰেছ আৰু এলাইনাৰ চিকিৎসা।</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🏛️</div>
+      <div class="service-title en">Dental Implants</div>
+      <div class="service-title as">ডেণ্টেল ইমপ্লেণ্ট</div>
+      <p class="service-desc en">Permanent, natural-looking tooth replacements that restore full function and aesthetics.</p>
+      <p class="service-desc as">স্থায়ী দাঁতৰ প্ৰতিস্থাপন যি সম্পূৰ্ণ কাৰ্যক্ষমতা পুনৰুদ্ধাৰ কৰে।</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">👶</div>
+      <div class="service-title en">Paediatric Dentistry</div>
+      <div class="service-title as">শিশু দন্তচিকিৎসা</div>
+      <p class="service-desc en">Gentle, child-friendly dental care in a welcoming environment designed to ease anxiety.</p>
+      <p class="service-desc as">শিশুৰ বাবে কোমল আৰু বন্ধুত্বপূৰ্ণ দাঁতৰ চিকিৎসা।</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🚨</div>
+      <div class="service-title en">Emergency Dental Care</div>
+      <div class="service-title as">জৰুৰী দন্তচিকিৎসা</div>
+      <p class="service-desc en">Prompt treatment for toothaches, broken teeth, and other urgent dental emergencies.</p>
+      <p class="service-desc as">দাঁতৰ বিষ, ভগা দাঁত আৰু জৰুৰী সমস্যাৰ তাৎক্ষণিক সমাধান।</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <span class="section-label reveal en">Why Choose Us</span>
+  <span class="section-label reveal as">কিয় আমাক বাছক</span>
+  <h2 class="section-title reveal en">Dentistry that Puts<br/>You First</h2>
+  <h2 class="section-title reveal as">আপোনাকে প্ৰাধান্য দিয়া<br/>দন্তচিকিৎসা</h2>
+  <p class="section-sub reveal en">We're not just another dental clinic. Here's what sets Smile Dental Care apart from the rest.</p>
+  <p class="section-sub reveal as">আমি কেৱল আৰু এটা ডেণ্টেল ক্লিনিক নহয়। ইয়াত জানক কিহে স্মাইল ডেণ্টেল কেয়াৰক আলাদা কৰে।</p>
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <div class="why-card-icon">🎓</div>
+      <h3 class="en">Qualified & Experienced</h3>
+      <h3 class="as">যোগ্য আৰু অভিজ্ঞ</h3>
+      <p class="en">Our dental professionals bring years of clinical experience and continued education in the latest treatments.</p>
+      <p class="as">আমাৰ দন্ত বিশেষজ্ঞসকলৰ বছৰৰ পিছত বছৰ ক্লিনিকেল অভিজ্ঞতা আছে।</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-card-icon">🏥</div>
+      <h3 class="en">Modern Equipment</h3>
+      <h3 class="as">আধুনিক সুবিধা</h3>
+      <p class="en">We use the latest dental technology and sterilized instruments for safe, precise, and comfortable treatments.</p>
+      <p class="as">আমি নিৰাপদ আৰু সঠিক চিকিৎসাৰ বাবে আটাইতকৈ আধুনিক দন্তচিকিৎসাৰ প্ৰযুক্তি ব্যৱহাৰ কৰোঁ।</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-card-icon">💰</div>
+      <h3 class="en">Affordable Pricing</h3>
+      <h3 class="as">সাশ্ৰয়ী মূল্য</h3>
+      <p class="en">Quality dental care shouldn't break the bank. We offer transparent, competitive pricing for all our treatments.</p>
+      <p class="as">মানসম্পন্ন দাঁতৰ চিকিৎসা সাশ্ৰয়ী হ'ব লাগে। আমি সকলো চিকিৎসাৰ বাবে স্বচ্ছ মূল্য প্ৰদান কৰোঁ।</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-card-icon">❤️</div>
+      <h3 class="en">Patient-Centred Care</h3>
+      <h3 class="as">ৰোগী-কেন্দ্ৰিক সেৱা</h3>
+      <p class="en">We listen, we explain, and we make sure you're comfortable at every step of your dental journey with us.</p>
+      <p class="as">আমি শুনোঁ, বুজাওঁ, আৰু প্ৰতিটো পদক্ষেপত আপোনাৰ আৰাম নিশ্চিত কৰোঁ।</p>
+    </div>
+  </div>
+</section>
+
+<!-- APPOINTMENT -->
+<section id="appointment">
+  <span class="section-label reveal en">Book Your Visit</span>
+  <span class="section-label reveal as">আপোনাৰ ভিজিট বুক কৰক</span>
+  <h2 class="section-title reveal en">Schedule an Appointment</h2>
+  <h2 class="section-title reveal as">এপয়েণ্টমেণ্ট নিৰ্ধাৰণ কৰক</h2>
+  <div class="appointment-grid">
+    <div class="appt-info reveal">
+      <h3 class="en">We'd love to see your smile!</h3>
+      <h3 class="as">আমি আপোনাৰ হাঁহি দেখিব বিচাৰোঁ!</h3>
+      <p class="en">Fill in the form to request an appointment and we'll confirm via WhatsApp or phone call. You can also reach us directly.</p>
+      <p class="as">এপয়েণ্টমেণ্ট অনুৰোধ কৰিবলৈ ফৰ্মটো পূৰণ কৰক আৰু আমি WhatsApp বা ফোনৰ জৰিয়তে নিশ্চিত কৰিম।</p>
+      <div class="appt-contact">
+        <a href="tel:+918822363706">
+          <span class="icon-circle">📞</span>
+          <span>+91 88223 63706</span>
+        </a>
+        <a href="https://wa.me/918822363706" target="_blank">
+          <span class="icon-circle">💬</span>
+          <span>WhatsApp Us</span>
+        </a>
+        <a href="#">
+          <span class="icon-circle">📍</span>
+          <span>AK Dev Road, Katahbari, Guwahati-35</span>
+        </a>
+        <a href="#">
+          <span class="icon-circle">🕐</span>
+          <span class="en">Mon–Sun: 10AM–2PM &amp; 4PM–8PM</span>
+          <span class="as">সোম–ৰবি: পুৱা ১০–দুপৰীয়া ২ &amp; বিয়লি ৪–ৰাতি ৮</span>
+        </a>
+      </div>
+      <a href="https://wa.me/918822363706?text=Hello%2C%20I%20would%20like%20to%20book%20a%20dental%20appointment%20at%20Smile%20Dental%20Care." target="_blank" class="whatsapp-btn en">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span>Book via WhatsApp</span>
+      </a>
+      <a href="https://wa.me/918822363706?text=নমস্কাৰ%2C%20মই%20Smile%20Dental%20Care%20ত%20এপয়েণ্টমেণ্ট%20বুক%20কৰিব%20বিচাৰিছোঁ।" target="_blank" class="whatsapp-btn as" style="margin-top:0">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span>WhatsApp ত বুক কৰক</span>
+      </a>
+    </div>
+
+    <div class="appt-form reveal">
+      <h3 class="en">Request an Appointment</h3>
+      <h3 class="as">এপয়েণ্টমেণ্ট অনুৰোধ কৰক</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="en">First Name *</label>
+          <label class="as">প্ৰথম নাম *</label>
+          <input type="text" id="firstName" placeholder="John" required/>
+        </div>
+        <div class="form-group">
+          <label class="en">Last Name *</label>
+          <label class="as">উপাধি *</label>
+          <input type="text" id="lastName" placeholder="Doe" required/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="en">Phone Number *</label>
+          <label class="as">ফোন নম্বৰ *</label>
+          <input type="tel" id="phone" placeholder="+91 XXXXX XXXXX" required/>
+        </div>
+        <div class="form-group">
+          <label class="en">Email (optional)</label>
+          <label class="as">ইমেইল (ঐচ্ছিক)</label>
+          <input type="email" id="email" placeholder="you@email.com"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="en">Select Service *</label>
+        <label class="as">সেৱা বাছক *</label>
+        <select id="service" required>
+          <option value="" class="en">-- Choose a treatment --</option>
+          <option value="" class="as">-- চিকিৎসা বাছক --</option>
+          <option value="General Checkup">General Checkup / সাধাৰণ পৰীক্ষা</option>
+          <option value="Teeth Cleaning">Teeth Cleaning / দাঁত পৰিষ্কাৰ</option>
+          <option value="Teeth Whitening">Teeth Whitening / দাঁত বগা কৰা</option>
+          <option value="Orthodontics">Orthodontics / অৰ্থোডণ্টিক্স</option>
+          <option value="Dental Implant">Dental Implant / ডেণ্টেল ইমপ্লেণ্ট</option>
+          <option value="Tooth Extraction">Tooth Extraction / দাঁত উলিওৱা</option>
+          <option value="Root Canal">Root Canal / ৰুট কেনেল</option>
+          <option value="Paediatric Dentistry">Paediatric / শিশু দন্তচিকিৎসা</option>
+          <option value="Emergency">Emergency / জৰুৰীকালীন</option>
+          <option value="Other">Other / অন্যান্য</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="en">Preferred Date *</label>
+          <label class="as">পছন্দৰ তাৰিখ *</label>
+          <input type="date" id="apptDate" required/>
+        </div>
+        <div class="form-group">
+          <label class="en">Preferred Time *</label>
+          <label class="as">পছন্দৰ সময় *</label>
+          <select id="apptTime" required>
+            <option value="">-- Select --</option>
+            <optgroup label="Morning (10AM–2PM)">
+              <option>10:00 AM</option><option>10:30 AM</option>
+              <option>11:00 AM</option><option>11:30 AM</option>
+              <option>12:00 PM</option><option>12:30 PM</option>
+              <option>1:00 PM</option><option>1:30 PM</option>
+            </optgroup>
+            <optgroup label="Evening (4PM–8PM)">
+              <option>4:00 PM</option><option>4:30 PM</option>
+              <option>5:00 PM</option><option>5:30 PM</option>
+              <option>6:00 PM</option><option>6:30 PM</option>
+              <option>7:00 PM</option><option>7:30 PM</option>
+            </optgroup>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="en">Additional Notes</label>
+        <label class="as">অতিৰিক্ত টোকা</label>
+        <textarea id="notes" placeholder="Any specific concerns or questions..."></textarea>
+      </div>
+
+      <!-- Google Calendar Embed placeholder -->
+      <div class="cal-section">
+        <label class="en">📅 View Availability (Google Calendar)</label>
+        <label class="as">📅 উপলব্ধতা চাওক (Google Calendar)</label>
+        <div class="cal-embed-wrap">
+          <!-- 
+            INSTRUCTIONS: Replace YOUR_CALENDAR_ID below with the Google Calendar public embed URL.
+            In Google Calendar → Settings → Your Calendar → Integrate Calendar → copy the embed URL.
+            Example: https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID&ctz=Asia%2FKolkata
+          -->
+          <iframe
+            src="https://calendar.google.com/calendar/embed?src=REPLACE_WITH_CALENDAR_ID%40group.calendar.google.com&ctz=Asia%2FKolkata&mode=WEEK&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0"
+            frameborder="0" scrolling="no"
+            title="Appointment Calendar">
+          </iframe>
+        </div>
+        <p style="font-size:0.75rem;color:var(--ink-soft);margin-top:8px" class="en">ℹ️ Green slots = available. Book your preferred time using the form above.</p>
+        <p style="font-size:0.75rem;color:var(--ink-soft);margin-top:8px" class="as">ℹ️ সেউজীয়া স্লট = উপলব্ধ। ওপৰৰ ফৰ্মৰ জৰিয়তে বুক কৰক।</p>
+      </div>
+
+      <button class="form-submit" onclick="submitForm()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        <span class="en">Send Appointment Request</span>
+        <span class="as">এপয়েণ্টমেণ্ট অনুৰোধ পঠিয়াওক</span>
+      </button>
+      <p class="form-note en">We'll confirm your appointment via WhatsApp or phone call within a few hours.</p>
+      <p class="form-note as">আমি কেইঘণ্টামানৰ ভিতৰত WhatsApp বা ফোনৰ জৰিয়তে নিশ্চিত কৰিম।</p>
+      <div class="success-msg" id="successMsg">
+        ✅ <strong class="en">Request sent!</strong><strong class="as">অনুৰোধ পঠোৱা হ'ল!</strong>
+        <span class="en"> We'll confirm via WhatsApp shortly. You can also reach us at +91 88223 63706.</span>
+        <span class="as"> আমি শীঘ্ৰে WhatsApp ৰ জৰিয়তে নিশ্চিত কৰিম। +91 88223 63706 ত যোগাযোগ কৰক।</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location">
+  <span class="section-label reveal en">Find Us</span>
+  <span class="section-label reveal as">আমাক বিচাৰক</span>
+  <h2 class="section-title reveal en">Visit Our Clinic</h2>
+  <h2 class="section-title reveal as">আমাৰ ক্লিনিকলৈ আহক</h2>
+  <div class="location-grid">
+    <div class="location-info reveal">
+      <h3 class="en">We're easy to find</h3>
+      <h3 class="as">আমাক বিচাৰি পোৱা সহজ</h3>
+      <div class="info-item">
+        <div class="info-icon">📍</div>
+        <div class="info-item-text">
+          <strong class="en">Address</strong><strong class="as">ঠিকনা</strong>
+          <span>AK Dev Road, Katahbari,<br/>Near Kabristan, Guwahati – 781035</span>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">🕐</div>
+        <div class="info-item-text">
+          <strong class="en">Hours</strong><strong class="as">সময়</strong>
+          <span class="en">Morning: 10:00 AM – 2:00 PM<br/>Evening: 4:00 PM – 8:00 PM<br/>Open 7 days a week</span>
+          <span class="as">পুৱা: ১০:০০ – ২:০০ অপৰাহ্ণ<br/>সন্ধ্যা: ৪:০০ – ৮:০০ অপৰাহ্ণ<br/>সপ্তাহত ৭ দিন খোলা</span>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">📞</div>
+        <div class="info-item-text">
+          <strong class="en">Phone</strong><strong class="as">ফোন</strong>
+          <span><a href="tel:+918822363706" style="color:var(--teal);text-decoration:none">+91 88223 63706</a></span>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">🚗</div>
+        <div class="info-item-text">
+          <strong class="en">Directions</strong><strong class="as">দিকনিৰ্দেশ</strong>
+          <span class="en">Easily accessible from Maligaon and Jalukbari area. Look for the clinic near Katahbari Kabristan.</span>
+          <span class="as">মালিগাঁও আৰু জালুকবাৰী এলেকাৰ পৰা সহজে পোৱাব পাৰি।</span>
+        </div>
+      </div>
+    </div>
+    <div class="map-wrap reveal">
+      <!-- Google Maps embed for AK Dev Road, Katahbari, Guwahati -->
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14329.04!2d91.6500!3d26.1445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375a5915c44fadc7%3A0x9b388ed38b7b1f0b!2sKatahbari%2C%20Guwahati%2C%20Assam!5e0!3m2!1sen!2sin!4v1700000000000"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Smile Dental Care Location">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="brand-name">Smile Dental Care</div>
+      <p class="en">Your trusted dental care partner in Guwahati. We're committed to your smile, your health, and your confidence.</p>
+      <p class="as">গুৱাহাটীত আপোনাৰ বিশ্বস্ত দন্তচিকিৎসা অংশীদাৰ। আমি আপোনাৰ হাঁহি, স্বাস্থ্য আৰু আত্মবিশ্বাসৰ প্ৰতি প্ৰতিশ্ৰুতিবদ্ধ।</p>
+      <div class="social-links" style="margin-top:20px">
+        <a href="#" class="social-link" aria-label="Facebook">f</a>
+        <a href="#" class="social-link" aria-label="Instagram">ig</a>
+        <a href="https://wa.me/918822363706" class="social-link" aria-label="WhatsApp">w</a>
+      </div>
+    </div>
+    <div>
+      <h4 class="en">Services</h4>
+      <h4 class="as">সেৱাসমূহ</h4>
+      <ul>
+        <li><a href="#services">General Dentistry</a></li>
+        <li><a href="#services">Teeth Whitening</a></li>
+        <li><a href="#services">Orthodontics</a></li>
+        <li><a href="#services">Dental Implants</a></li>
+        <li><a href="#services">Paediatric Dentistry</a></li>
+        <li><a href="#services">Emergency Care</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="en">Contact</h4>
+      <h4 class="as">যোগাযোগ</h4>
+      <ul>
+        <li><a href="tel:+918822363706">+91 88223 63706</a></li>
+        <li><a href="https://wa.me/918822363706">WhatsApp</a></li>
+        <li><a href="#location">AK Dev Road, Katahbari</a></li>
+        <li><a href="#location">Guwahati – 781035</a></li>
+        <li><a href="#appointment" class="en">Book Appointment</a></li>
+        <li><a href="#appointment" class="as">এপয়েণ্টমেণ্ট বুক কৰক</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Smile Dental Care, Guwahati. <span class="en">All rights reserved.</span><span class="as">সকলো অধিকাৰ সংৰক্ষিত।</span></p>
+    <p style="font-size:0.72rem;opacity:0.5" class="en">Designed with ❤️ for better smiles in Guwahati</p>
+    <p style="font-size:0.72rem;opacity:0.5" class="as">গুৱাহাটীৰ সুন্দৰ হাঁহিৰ বাবে ❤️ ৰে ডিজাইন কৰা হৈছে</p>
+  </div>
+</footer>
+
+<!-- Scroll to Top -->
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<script>
+// ── Language Toggle ──
+function setLang(lang) {
+  document.body.classList.toggle('lang-as', lang === 'as');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-as').classList.toggle('active', lang === 'as');
+}
+
+// ── Mobile Menu ──
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+// ── Sticky Nav shadow ──
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+  const st = document.getElementById('scrollTop');
+  st.classList.toggle('show', window.scrollY > 400);
+});
+
+// ── Reveal on scroll ──
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ── Open / Closed Status ──
+function checkOpen() {
+  const now = new Date();
+  const h = now.getHours(), m = now.getMinutes();
+  const mins = h * 60 + m;
+  const morning = mins >= 600 && mins < 840;   // 10:00–14:00
+  const evening = mins >= 960 && mins < 1200;  // 16:00–20:00
+  const el = document.getElementById('openStatus');
+  const txt = document.getElementById('openText');
+  const isAs = document.body.classList.contains('lang-as');
+  if (morning || evening) {
+    el.style.background = '#e8f8ee'; el.style.color = '#1a7a3c';
+    el.querySelector('.dot').style.background = '#1a7a3c';
+    txt.textContent = isAs ? 'এতিয়া খোলা আছে' : 'Open Now';
+  } else {
+    el.style.background = '#fdecea'; el.style.color = '#c0392b';
+    el.querySelector('.dot').style.background = '#c0392b';
+    el.querySelector('.dot').style.animation = 'none';
+    txt.textContent = isAs ? 'এতিয়া বন্ধ আছে' : 'Currently Closed';
+  }
+}
+checkOpen();
+setInterval(checkOpen, 60000);
+
+// ── Set min date to today ──
+const dateInput = document.getElementById('apptDate');
+const today = new Date().toISOString().split('T')[0];
+dateInput.setAttribute('min', today);
+
+// ── Form Submit → WhatsApp ──
+function submitForm() {
+  const fn = document.getElementById('firstName').value.trim();
+  const ln = document.getElementById('lastName').value.trim();
+  const ph = document.getElementById('phone').value.trim();
+  const svc = document.getElementById('service').value;
+  const dt = document.getElementById('apptDate').value;
+  const tm = document.getElementById('apptTime').value;
+  const notes = document.getElementById('notes').value.trim();
+  const isAs = document.body.classList.contains('lang-as');
+
+  if (!fn || !ph || !svc || !dt || !tm) {
+    alert(isAs ? 'অনুগ্ৰহ কৰি সকলো আৱশ্যকীয় ক্ষেত্ৰ পূৰণ কৰক।' : 'Please fill in all required fields.');
+    return;
+  }
+
+  const msg = `Hello Smile Dental Care! 🦷\n\nNew Appointment Request:\n👤 Name: ${fn} ${ln}\n📞 Phone: ${ph}\n💉 Service: ${svc}\n📅 Date: ${dt}\n🕐 Time: ${tm}${notes ? '\n📝 Notes: ' + notes : ''}\n\nPlease confirm this appointment. Thank you!`;
+
+  const waUrl = 'https://wa.me/918822363706?text=' + encodeURIComponent(msg);
+  window.open(waUrl, '_blank');
+
+  document.getElementById('successMsg').style.display = 'block';
+  document.getElementById('successMsg').scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+</script>
+</body>
+</html>
