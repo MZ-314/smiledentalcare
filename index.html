@@ -1,323 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Smile Dental Care – Dr. S Al Jakaria | Guwahati</title>
-<meta name="description" content="Smile Dental Care – Premium dental services by Dr. S Al Jakaria in Katahbari, Guwahati. Book appointments online. Call +918822363706."/>
-<meta name="keywords" content="dentist Guwahati, Smile Dental Care, Dr Jakaria dentist, teeth whitening Guwahati, dental clinic Katahbari"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<style>
-:root {
-  --primary:    #006A70;
-  --primary-dk: #004d52;
-  --primary-lt: #e6f2f2;
-  --accent:     #B67E4D;
-  --accent-lt:  #f5ead8;
-  --bg:         #FDFDF9;
-  --text:       #2C2C2C;
-  --text-soft:  #6b6b6b;
-  --white:      #ffffff;
-  --border:     rgba(0,106,112,0.14);
-  --shadow-sm:  0 2px 12px rgba(0,106,112,0.08);
-  --shadow-md:  0 8px 40px rgba(0,106,112,0.13);
-  --shadow-lg:  0 20px 60px rgba(0,106,112,0.16);
-  --r-sm: 10px; --r-md: 18px; --r-lg: 28px;
-  --nav-h: 80px;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.7;overflow-x:hidden}
-h1,h2,h3,h4{font-family:'Montserrat',sans-serif;line-height:1.15}
-h1{font-weight:700;font-size:clamp(38px,5.5vw,60px)}
-h2{font-weight:600;font-size:clamp(26px,3.5vw,32px)}
-h3{font-weight:600;font-size:20px}
-p{font-family:'Inter',sans-serif;font-weight:400;font-size:17px}
-a{text-decoration:none;color:inherit}
-button,.btn{font-family:'Montserrat',sans-serif;font-weight:500;cursor:pointer;border:none;outline:none}
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smile Dental Care – Dr. S Al Jakaria | Guwahati</title>
+  <meta name="description" content="Smile Dental Care – Premium dental services by Dr. S Al Jakaria in Katahbari, Guwahati. Book appointments online. Call +918822363706."/>
+  <meta name="keywords" content="dentist Guwahati, Smile Dental Care, Dr Jakaria, teeth whitening, dental implants, orthodontics Guwahati"/>
+  <meta property="og:title" content="Smile Dental Care – Guwahati"/>
+  <meta property="og:description" content="Expert dental care in Katahbari, Guwahati. Book your appointment with Dr. S Al Jakaria today."/>
+  <meta property="og:type" content="website"/>
 
-.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--primary);color:var(--white);padding:15px 32px;border-radius:50px;font-size:15px;font-weight:500;transition:all .25s}
-.btn-primary:hover{background:var(--primary-dk);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,106,112,.3)}
-.btn-outline{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.75);padding:13px 30px;border-radius:50px;font-size:15px;font-weight:500;transition:all .25s}
-.btn-outline:hover{background:rgba(255,255,255,.18);border-color:white}
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
-.eyebrow::before{content:'';display:block;width:28px;height:2px;background:var(--accent)}
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css"/>
 
-.reveal{opacity:0;transform:translateY(32px);transition:opacity .75s ease,transform .75s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
-
-/* NAV */
-#navbar{position:fixed;top:0;left:0;right:0;z-index:999;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 56px;background:transparent;transition:background .35s,box-shadow .35s}
-#navbar.scrolled{background:rgba(253,253,249,.96);backdrop-filter:blur(16px);box-shadow:var(--shadow-sm)}
-.nav-logo{display:flex;align-items:center;gap:10px}
-/* ════════════════════════════════════════════════════════════════════
-   LOGO — Replace src with your Cloudinary URL
-   Recommended dimensions: 180 × 50 px (PNG with transparent background)
-   Cloudinary URL format: https://res.cloudinary.com/YOUR_CLOUD/image/upload/logo.png
-   ════════════════════════════════════════════════════════════════════ */
-.nav-logo img{height:46px;width:auto;object-fit:contain}
-.logo-fallback{font-family:'Montserrat',sans-serif;font-weight:700;font-size:19px;color:#fff;line-height:1.1;display:none}
-#navbar.scrolled .logo-fallback{color:var(--primary-dk)}
-.nav-links{display:flex;gap:36px;list-style:none}
-.nav-links a{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:500;color:rgba(255,255,255,.88);letter-spacing:.04em;transition:color .2s;position:relative}
-.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transition:transform .25s}
-.nav-links a:hover::after{transform:scaleX(1)}
-.nav-links a:hover{color:#fff}
-#navbar.scrolled .nav-links a{color:var(--text-soft)}
-#navbar.scrolled .nav-links a:hover{color:var(--primary)}
-.nav-book{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:500;background:var(--accent);color:#fff;padding:11px 26px;border-radius:50px;transition:all .25s;text-decoration:none}
-.nav-book:hover{background:#9e6c40;transform:translateY(-1px)}
-#navbar.scrolled .nav-book{background:var(--primary)}
-#navbar.scrolled .nav-book:hover{background:var(--primary-dk)}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
-.hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
-#navbar.scrolled .hamburger span{background:var(--text)}
-.mob-nav{display:none;position:fixed;inset:0;z-index:998;background:#fff;flex-direction:column;align-items:center;justify-content:center;gap:28px}
-.mob-nav.open{display:flex}
-.mob-nav a{font-family:'Montserrat',sans-serif;font-size:28px;font-weight:600;color:var(--primary-dk)}
-.mob-close{position:absolute;top:24px;right:28px;font-size:2rem;background:none;border:none;cursor:pointer;color:var(--text)}
-
-/* HERO */
-#hero{position:relative;height:100vh;min-height:620px;display:flex;align-items:center;overflow:hidden}
-.hero-slides{position:absolute;inset:0}
-.slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s ease}
-.slide.active{opacity:1}
-.slide::after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,rgba(0,30,32,.74) 0%,rgba(0,50,54,.50) 55%,rgba(0,30,32,.28) 100%)}
-/*
-═══════════════════════════════════════════════════════════════════════
-  HERO SLIDE IMAGES
-  Recommended dimensions: 1920 × 1080 px (16:9 Full HD)
-  Format: JPG or WebP | Upload to Cloudinary
-  Replace each background-image URL with your Cloudinary URL:
-  Example: url('https://res.cloudinary.com/YOUR_CLOUD/image/upload/slide1.jpg')
-═══════════════════════════════════════════════════════════════════════
-*/
-.slide:nth-child(1){background-image:url('https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/slide-1.jpg');background-color:#004d52}
-.slide:nth-child(2){background-image:url('https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/slide-2.jpg');background-color:#003a3e}
-.slide:nth-child(3){background-image:url('https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/slide-3.jpg');background-color:#005055}
-.slide:nth-child(4){background-image:url('https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/slide-4.jpg');background-color:#002e32}
-
-.hero-content{position:relative;z-index:2;width:100%;padding:0 56px;display:flex;align-items:center;justify-content:space-between;gap:48px}
-.hero-text{max-width:580px}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(182,126,77,.22);border:1px solid rgba(182,126,77,.45);color:#f5c990;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:7px 16px;border-radius:50px;margin-bottom:22px;animation:fadeUp .6s ease both}
-.hero-text h1{color:#fff;margin-bottom:18px;animation:fadeUp .6s .1s ease both}
-.hero-text h1 span{color:#7ecbce}
-.hero-text p{color:rgba(255,255,255,.8);font-size:17px;max-width:500px;margin-bottom:34px;animation:fadeUp .6s .2s ease both}
-.hero-actions{display:flex;gap:16px;flex-wrap:wrap;animation:fadeUp .6s .3s ease both}
-.hero-dots{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:3;display:flex;gap:10px}
-.dot-btn{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.35);border:none;cursor:pointer;transition:all .3s;padding:0}
-.dot-btn.active{background:var(--accent);transform:scale(1.4)}
-
-/* Hero info card */
-.hero-card{background:rgba(255,255,255,.1);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.18);border-radius:var(--r-lg);padding:34px 30px;min-width:300px;max-width:330px;animation:fadeUp .7s .3s ease both;flex-shrink:0}
-.hero-card h3{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#7ecbce;margin-bottom:18px}
-.h-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.1)}
-.h-row:last-of-type{border-bottom:none}
-.h-label{display:flex;align-items:center;gap:9px;color:rgba(255,255,255,.72);font-size:14px}
-.h-label svg{flex-shrink:0;color:var(--accent)}
-.h-time{color:#fff;font-weight:500;font-size:14px;font-family:'Montserrat',sans-serif}
-.open-pill{display:inline-flex;align-items:center;gap:7px;padding:7px 16px;border-radius:50px;font-size:12px;font-weight:600;font-family:'Montserrat',sans-serif;letter-spacing:.05em;margin:14px 0}
-.open-pill.open{background:rgba(30,200,80,.18);color:#5ddc8a}
-.open-pill.closed{background:rgba(220,60,60,.18);color:#f08080}
-.pill-dot{width:7px;height:7px;border-radius:50%;background:currentColor;flex-shrink:0}
-.open-pill.open .pill-dot{animation:pulse 1.5s infinite}
-.hero-phone{display:flex;align-items:center;gap:12px;background:rgba(0,106,112,.35);border:1px solid rgba(0,106,112,.5);border-radius:var(--r-sm);padding:14px 16px;text-decoration:none;transition:background .2s}
-.hero-phone:hover{background:rgba(0,106,112,.55)}
-.hero-phone span{color:#fff;font-size:15px;font-weight:500;font-family:'Montserrat',sans-serif}
-
-/* SERVICES */
-#services{padding:100px 56px;background:var(--white)}
-.sec-head{text-align:center;max-width:620px;margin:0 auto 60px}
-.sec-head h2{color:var(--primary-dk);margin-bottom:14px}
-.sec-head p{color:var(--text-soft)}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px;max-width:1200px;margin:0 auto}
-.svc-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--r-md);padding:36px 28px;transition:all .3s;position:relative;overflow:hidden}
-.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent));transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
-.svc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:transparent}
-.svc-card:hover::before{transform:scaleX(1)}
-.svc-icon{width:54px;height:54px;background:var(--primary-lt);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;transition:background .3s}
-.svc-card:hover .svc-icon{background:var(--accent-lt)}
-.svc-icon svg{color:var(--primary);transition:color .3s}
-.svc-card:hover .svc-icon svg{color:var(--accent)}
-.svc-card h3{color:var(--primary-dk);margin-bottom:10px;font-size:18px}
-.svc-card p{color:var(--text-soft);font-size:15px;line-height:1.65}
-
-/* DOCTOR */
-#doctor{padding:100px 56px;background:var(--bg)}
-.doc-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;max-width:1100px;margin:0 auto}
-.doc-img-wrap{position:relative}
-.doc-img-bg{position:absolute;top:20px;left:20px;right:-20px;bottom:-20px;background:var(--primary-lt);border-radius:var(--r-lg);z-index:0}
-.doc-img{position:relative;z-index:1;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/5;background:var(--primary-lt);box-shadow:var(--shadow-lg)}
-.doc-img img{width:100%;height:100%;object-fit:cover;display:block}
-/*
-════════════════════════════════════════════════════════════════════════
-  DOCTOR PHOTO — Replace the src in the <img> tag below
-  Recommended dimensions: 600 × 750 px (portrait, 4:5 ratio)
-  Format: JPG or WebP | Upload to Cloudinary
-  URL: https://res.cloudinary.com/YOUR_CLOUD/image/upload/dr-jakaria.jpg
-════════════════════════════════════════════════════════════════════════
-*/
-.doc-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--primary)}
-.doc-placeholder svg{opacity:.25}
-.doc-placeholder span{font-size:13px;color:var(--text-soft);font-family:'Montserrat',sans-serif;font-weight:500}
-.cred-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px}
-.badge{background:var(--primary-lt);color:var(--primary);font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:5px 14px;border-radius:50px}
-.doc-info h2{color:var(--primary-dk);margin:10px 0 6px}
-.doc-title{font-family:'Montserrat',sans-serif;font-weight:500;font-size:16px;color:var(--accent);margin-bottom:22px}
-.doc-info p{color:var(--text-soft);margin-bottom:18px}
-.doc-stats{display:flex;border:1px solid var(--border);border-radius:var(--r-sm);overflow:hidden;margin-top:30px}
-.dstat{flex:1;padding:20px 14px;text-align:center;border-right:1px solid var(--border)}
-.dstat:last-child{border-right:none}
-.dstat-n{font-family:'Montserrat',sans-serif;font-weight:700;font-size:26px;color:var(--primary)}
-.dstat-l{font-size:12px;color:var(--text-soft);margin-top:3px;font-family:'Montserrat',sans-serif;font-weight:500}
-
-/* WHY */
-#why{padding:100px 56px;background:var(--primary-dk)}
-.why-inner{max-width:1100px;margin:0 auto}
-.why-hd{margin-bottom:52px}
-.why-hd h2{color:#fff;margin-bottom:12px}
-.why-hd p{color:rgba(255,255,255,.62);max-width:480px}
-.why-hd .eyebrow{color:#7ecbce}.why-hd .eyebrow::before{background:#7ecbce}
-.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:24px}
-.why-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-md);padding:32px 26px;transition:all .3s}
-.why-card:hover{background:rgba(255,255,255,.12);transform:translateY(-4px)}
-.w-icon{font-size:1.9rem;margin-bottom:14px}
-.why-card h3{color:#fff;margin-bottom:8px;font-size:17px}
-.why-card p{color:rgba(255,255,255,.58);font-size:15px;line-height:1.65}
-
-/* APPOINTMENT */
-#appointment{padding:100px 56px;background:var(--bg)}
-.appt-inner{max-width:1100px;margin:0 auto}
-.appt-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:start;margin-top:52px}
-.appt-left h3{font-size:22px;color:var(--primary-dk);margin-bottom:14px}
-.appt-left>p{color:var(--text-soft);margin-bottom:26px;font-size:16px}
-.clist{display:flex;flex-direction:column;gap:14px;margin-bottom:28px}
-.citem{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--text-soft);font-size:15px;transition:color .2s}
-.citem:hover{color:var(--primary)}
-.cicon{width:44px;height:44px;flex-shrink:0;background:var(--primary-lt);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:background .2s}
-.citem:hover .cicon{background:var(--accent-lt)}
-.gcal-box{background:var(--primary-lt);border:1px solid var(--border);border-radius:var(--r-sm);padding:20px}
-.gcal-box h4{font-size:14px;color:var(--primary-dk);margin-bottom:8px;display:flex;align-items:center;gap:7px;font-family:'Montserrat',sans-serif}
-.gcal-box p{font-size:13px;color:var(--text-soft);line-height:1.65;margin:0}
-
-/* Form */
-.appt-form{background:#fff;border-radius:var(--r-lg);padding:44px 40px;box-shadow:var(--shadow-md);border:1px solid var(--border)}
-.appt-form>h3{font-size:22px;color:var(--primary-dk);margin-bottom:26px}
-.frow{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.fg{display:flex;flex-direction:column;gap:7px;margin-bottom:18px}
-.fg label{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-soft)}
-.fg input,.fg select,.fg textarea{background:var(--bg);border:1.5px solid #e0e0da;border-radius:var(--r-sm);padding:13px 16px;font-family:'Inter',sans-serif;font-size:15px;color:var(--text);transition:border-color .2s,box-shadow .2s;outline:none;width:100%;appearance:none;-webkit-appearance:none}
-.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(0,106,112,.11)}
-.fg input::placeholder,.fg textarea::placeholder{color:#b8b8b0}
-.fg textarea{resize:vertical;min-height:95px}
-.fg select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b6b6b' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px;cursor:pointer}
-.radio-row{display:flex;gap:18px}
-.radio-opt{display:flex;align-items:center;gap:7px;cursor:pointer;font-size:15px;color:var(--text-soft)}
-.radio-opt input{accent-color:var(--primary);width:16px;height:16px;cursor:pointer}
-.cal-lbl{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-soft);display:block;margin-bottom:9px}
-.cal-wrap{border:1.5px solid #e0e0da;border-radius:var(--r-sm);overflow:hidden;margin-bottom:20px}
-.cal-wrap iframe{display:block;width:100%;height:270px;border:none}
-.f-submit{width:100%;padding:17px;background:var(--primary);color:#fff;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:16px;font-weight:500;display:flex;align-items:center;justify-content:center;gap:10px;transition:all .25s;cursor:pointer;border:none}
-.f-submit:hover:not(:disabled){background:var(--primary-dk);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,106,112,.28)}
-.f-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
-.f-note{font-size:13px;color:var(--text-soft);text-align:center;margin-top:13px;line-height:1.6}
-.f-success{display:none;background:#edf7f0;border:1px solid #a5d6b5;border-radius:var(--r-sm);padding:20px;color:#1e7a40;text-align:center;font-size:15px;margin-top:14px;line-height:1.6}
-.f-error{display:none;background:#fdf0f0;border:1px solid #f0b0b0;border-radius:var(--r-sm);padding:16px;color:#c0392b;text-align:center;font-size:14px;margin-top:12px}
-@keyframes spin{to{transform:rotate(360deg)}}
-.spinner{width:17px;height:17px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite}
-
-/* LOCATION */
-#location{padding:100px 56px;background:var(--white)}
-.loc-inner{max-width:1100px;margin:0 auto}
-.loc-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:56px;align-items:start;margin-top:52px}
-.loc-items{display:flex;flex-direction:column;gap:26px}
-.litem{display:flex;gap:16px}
-.licon{width:48px;height:48px;flex-shrink:0;background:var(--primary-lt);border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
-.litem h4{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-soft);margin-bottom:5px;font-family:'Montserrat',sans-serif}
-.litem p,.litem a{font-size:15px;color:var(--text);line-height:1.65}
-.litem a{color:var(--primary)}
-.litem a:hover{text-decoration:underline}
-.map-box{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-md);border:1px solid var(--border)}
-.map-box iframe{display:block;width:100%;height:440px;border:none}
-
-/* FOOTER */
-footer{background:var(--primary-dk);color:rgba(255,255,255,.68);padding:72px 56px 36px}
-.ft-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:56px;max-width:1100px;margin:0 auto 52px}
-.ft-brand p{font-size:15px;line-height:1.75;margin-top:14px;max-width:300px}
-.ft-logo{height:42px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.9}
-.ft-logo-txt{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:700;color:#fff;display:none}
-footer h4{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;font-family:'Montserrat',sans-serif}
-footer ul{list-style:none;display:flex;flex-direction:column;gap:11px}
-footer ul a{font-size:15px;color:rgba(255,255,255,.62);transition:color .2s}
-footer ul a:hover{color:#fff}
-.ft-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:26px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;max-width:1100px;margin:0 auto}
-.ft-bottom p{font-size:13px}
-.socials{display:flex;gap:10px}
-.soc{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.7);font-size:13px;font-weight:600;text-decoration:none;transition:all .2s}
-.soc:hover{background:var(--accent);border-color:var(--accent);color:#fff}
-
-#scrollTop{position:fixed;bottom:28px;right:28px;z-index:200;width:48px;height:48px;background:var(--primary);color:#fff;border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-md);opacity:0;transform:translateY(16px);pointer-events:none;transition:all .3s}
-#scrollTop.show{opacity:1;transform:translateY(0);pointer-events:auto}
-#scrollTop:hover{background:var(--primary-dk)}
-
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.5)}}
-
-@media(max-width:1024px){#navbar,#hero .hero-content,#services,#doctor,#why,#appointment,#location,footer{padding-left:32px;padding-right:32px}}
-@media(max-width:860px){
-  .nav-links,.nav-book{display:none}.hamburger{display:flex}
-  .hero-content{flex-direction:column;align-items:flex-start}
-  .hero-card{max-width:100%;min-width:unset;width:100%}
-  .services-grid{grid-template-columns:1fr 1fr}
-  .doc-grid,.appt-grid,.loc-grid{grid-template-columns:1fr}
-  .doc-img-bg{display:none}.ft-grid{grid-template-columns:1fr;gap:32px}
-  .frow{grid-template-columns:1fr}
-  .why-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:560px){
-  :root{--nav-h:66px}
-  h1{font-size:34px}
-  .services-grid,.why-grid{grid-template-columns:1fr}
-  .hero-actions{flex-direction:column}
-  .btn-primary,.btn-outline{justify-content:center}
-  .ft-bottom{flex-direction:column;align-items:flex-start}
-  #services,#doctor,#why,#appointment,#location,footer{padding-left:20px;padding-right:20px}
-  #navbar,#hero .hero-content{padding-left:20px;padding-right:20px}
-}
-</style>
+  <!-- Shake keyframe (small inline addition) -->
+  <style>
+    @keyframes shake {
+      0%,100%{transform:translateX(0)}
+      20%{transform:translateX(-6px)}
+      40%{transform:translateX(6px)}
+      60%{transform:translateX(-4px)}
+      80%{transform:translateX(4px)}
+    }
+  </style>
 </head>
 <body>
 
-<!-- Mobile Nav -->
-<div class="mob-nav" id="mobNav">
-  <button class="mob-close" onclick="mobNavToggle()">✕</button>
-  <a href="#services" onclick="mobNavToggle()">Services</a>
-  <a href="#doctor" onclick="mobNavToggle()">Our Doctor</a>
-  <a href="#why" onclick="mobNavToggle()">Why Us</a>
-  <a href="#appointment" onclick="mobNavToggle()">Appointment</a>
-  <a href="#location" onclick="mobNavToggle()">Location</a>
-</div>
+<!-- ═══════════════════════════════════════════════════════
+     MOBILE DROPDOWN MENU  (sits behind navbar z-index)
+═══════════════════════════════════════════════════════ -->
+<nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu-inner">
+    <a href="#services">Services <span>→</span></a>
+    <a href="#doctor">Our Doctor <span>→</span></a>
+    <a href="#why">Why Choose Us <span>→</span></a>
+    <a href="#appointment">Appointment <span>→</span></a>
+    <a href="#location">Location <span>→</span></a>
+  </div>
+  <div class="mobile-menu-footer">
+    <a href="#appointment">Book Appointment</a>
+    <a href="tel:+918822363706">+91 88223 63706</a>
+  </div>
+</nav>
 
-<!-- ═══════════ NAVBAR ═══════════ -->
-<nav id="navbar">
+
+<!-- ═══════════════════════════════════════════════════════
+     NAVBAR
+═══════════════════════════════════════════════════════ -->
+<header id="navbar">
+
+  <!-- LEFT: Logo -->
   <a href="#" class="nav-logo" aria-label="Smile Dental Care">
     <!--
-    ┌──────────────────────────────────────────────────────────────────────┐
-    │  LOGO  Replace the src below with your Cloudinary logo URL          │
-    │  Recommended size: 180 × 50 px  (PNG, transparent background)       │
-    │  URL format: https://res.cloudinary.com/YOUR_CLOUD/image/upload/logo.png │
-    └──────────────────────────────────────────────────────────────────────┘
+    ┌───────────────────────────────────────────────────────────────────┐
+    │  LOGO — Upload to Cloudinary and replace src below               │
+    │  Recommended: 220 × 56 px  (PNG with transparent background)     │
+    │  2× retina: 440 × 112 px                                         │
+    │  URL: https://res.cloudinary.com/YOUR_CLOUD/image/upload/logo.png│
+    └───────────────────────────────────────────────────────────────────┘
     -->
-    <img src="https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/smile-dental-logo.png"
-         alt="Smile Dental Care"
-         onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
-    <span class="logo-fallback">Smile Dental Care</span>
+    <img
+      src="https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/smile-dental-logo.png"
+      alt="Smile Dental Care"
+      onerror="this.style.display='none'; this.parentElement.querySelector('.nav-logo-text').style.display='block';"
+    />
+    <div class="nav-logo-text">
+      <div class="brand-name">Smile Dental Care</div>
+      <div class="brand-sub">Guwahati</div>
+    </div>
   </a>
+
+  <!-- CENTER: Desktop nav links -->
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#doctor">Our Doctor</a></li>
@@ -325,260 +81,471 @@ footer ul a:hover{color:#fff}
     <li><a href="#appointment">Appointment</a></li>
     <li><a href="#location">Location</a></li>
   </ul>
-  <a href="#appointment" class="nav-book">Book Appointment</a>
-  <div class="hamburger" onclick="mobNavToggle()">
-    <span></span><span></span><span></span>
-  </div>
-</nav>
 
-<!-- ═══════════ HERO ═══════════ -->
+  <!-- RIGHT: CTA + hamburger -->
+  <div class="nav-right">
+    <a href="#appointment" class="nav-book-btn">Book Appointment</a>
+    <!-- Hamburger → Cross animation -->
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </div>
+
+</header>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════════ -->
 <section id="hero">
-  <!--
-  ╔═══════════════════════════════════════════════════════════════════════╗
-  ║  HERO BACKGROUND SLIDES — 4 images required                          ║
-  ║  Dimensions: 1920 × 1080 px  (16:9 Full HD)                         ║
-  ║  Format: JPG or WebP                                                  ║
-  ║  Upload to Cloudinary, then update the CSS background-image for      ║
-  ║  .slide:nth-child(1) through .slide:nth-child(4) in the <style> tag  ║
-  ╚═══════════════════════════════════════════════════════════════════════╝
-  -->
-  <div class="hero-slides" id="heroSlides">
-    <div class="slide active"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
+
+  <!-- Background slides -->
+  <div class="hero-slides">
+    <!--
+    ╔═══════════════════════════════════════════════════════════════════════╗
+    ║  HERO SLIDES — 4 images                                               ║
+    ║  Dimensions:  1920 × 1080 px  (16:9, Full HD)                        ║
+    ║  Format:      JPG or WebP (compress to < 400 KB each)                ║
+    ║  Upload to Cloudinary. Replace the background-image in style.css:    ║
+    ║  .hero-slide:nth-child(1) { background-image: url('YOUR_URL'); }     ║
+    ║  ...repeat for child(2), child(3), child(4)                          ║
+    ╚═══════════════════════════════════════════════════════════════════════╝
+    -->
+    <div class="hero-slide active"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
   </div>
 
-  <div class="hero-content">
-    <!-- LEFT -->
-    <div class="hero-text">
-      <div class="hero-badge">✦ Premium Dental Care · Guwahati</div>
-      <h1>Where Every <span>Smile</span><br/>is Crafted<br/>with Care</h1>
-      <p>Experience gentle, expert dental care right in the heart of Katahbari, Guwahati. We blend modern techniques with a warm, personal touch to give you the smile you deserve.</p>
+  <!-- Gradient overlay -->
+  <div class="hero-overlay"></div>
+
+  <!-- Content -->
+  <div class="hero-body">
+
+    <!-- LEFT: Headline + CTA -->
+    <div class="hero-left">
+      <p class="hero-tag">Premium Dental Care · Guwahati</p>
+      <h1 class="hero-h1">
+        Where Every<br/><em>Smile</em> is<br/>Crafted with Care
+      </h1>
+      <p class="hero-sub">
+        Experience gentle, expert dental care right in the heart of Katahbari, Guwahati.
+        We blend modern techniques with a warm, personal touch to give you the smile you deserve.
+      </p>
       <div class="hero-actions">
-        <a href="#appointment" class="btn-primary">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <a href="#appointment" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <rect x="3" y="4" width="18" height="18" rx="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
           Book Appointment
         </a>
-        <a href="tel:+918822363706" class="btn-outline">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .96h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <a href="tel:+918822363706" class="btn btn-ghost">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .96h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
           Call Now
         </a>
       </div>
     </div>
 
-    <!-- RIGHT: Clinic info -->
+    <!-- RIGHT: Clinic hours card -->
     <div class="hero-card">
-      <h3>Clinic Hours</h3>
-      <div class="h-row">
-        <span class="h-label">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          Morning Session
-        </span>
-        <span class="h-time">10:00 AM – 2:00 PM</span>
+      <p class="hero-card-label">Clinic Hours</p>
+      <div class="hours-list">
+        <div class="hours-item">
+          <span class="hi-label">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+            Morning
+          </span>
+          <span class="hi-time">10:00 AM – 2:00 PM</span>
+        </div>
+        <div class="hours-item">
+          <span class="hi-label">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+            Evening
+          </span>
+          <span class="hi-time">4:00 PM – 8:00 PM</span>
+        </div>
       </div>
-      <div class="h-row">
-        <span class="h-label">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          Evening Session
-        </span>
-        <span class="h-time">4:00 PM – 8:00 PM</span>
+      <div class="status-badge open" id="statusBadge">
+        <span class="status-dot"></span>
+        <span id="statusText">Checking…</span>
       </div>
-      <div class="open-pill" id="openPill">
-        <span class="pill-dot"></span>
-        <span id="openTxt">Checking...</span>
-      </div>
-      <a href="tel:+918822363706" class="hero-phone">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .96h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <a href="tel:+918822363706" class="card-phone">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8ad4d6" stroke-width="2">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .96h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+        </svg>
         <span>+91 88223 63706</span>
       </a>
     </div>
+
   </div>
-  <div class="hero-dots" id="heroDots"></div>
+
+  <!-- Slide indicators (dots) -->
+  <div class="slide-indicators" id="slideDots"></div>
+  <!-- Slide counter -->
+  <div class="slide-counter" id="slideCounter"></div>
+
 </section>
 
-<!-- ═══════════ SERVICES ═══════════ -->
-<section id="services">
-  <div class="sec-head reveal">
-    <span class="eyebrow">What We Offer</span>
-    <h2>Comprehensive Dental Care<br/>for Every Need</h2>
-    <p>From routine check-ups to advanced cosmetic procedures — all under one roof.</p>
-  </div>
-  <div class="services-grid">
-    <div class="svc-card reveal d1">
-      <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C8 2 4 5 4 9c0 3 1 5 2.5 7.5S9 22 9.5 23c.3.7 1 1.2 1.8.8.8-.4.8-1.8 1-3 .2-1.2.5-3 .7-3s.5 1.8.7 3c.2 1.2.2 2.6 1 3 .8.4 1.5-.1 1.8-.8.5-1 2-3 3.5-6.5S20 12 20 9c0-4-4-7-8-7z"/></svg></div>
-      <h3>General Dentistry</h3>
-      <p>Routine cleanings, fillings, extractions and preventive care to keep your teeth healthy for life.</p>
-    </div>
-    <div class="svc-card reveal d2">
-      <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-      <h3>Teeth Whitening</h3>
-      <p>Professional-grade whitening treatments that brighten your smile safely and effectively.</p>
-    </div>
-    <div class="svc-card reveal d3">
-      <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-      <h3>Orthodontics</h3>
-      <p>Braces and aligners to correct misaligned teeth and give you a perfect, confident smile.</p>
-    </div>
-    <div class="svc-card reveal d4">
-      <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
-      <h3>Dental Implants</h3>
-      <p>Permanent, natural-looking tooth replacements that restore full function and aesthetics.</p>
-    </div>
-    <div class="svc-card reveal d1">
-      <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
-      <h3>Paediatric Dentistry</h3>
-      <p>Gentle, child-friendly dental care in a welcoming environment designed to ease anxiety.</p>
-    </div>
-    <div class="svc-card reveal d2">
-      <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-      <h3>Emergency Dental Care</h3>
-      <p>Prompt treatment for toothaches, broken teeth, and urgent dental emergencies — same day.</p>
-    </div>
-  </div>
-</section>
 
-<!-- ═══════════ DOCTOR ═══════════ -->
-<section id="doctor">
-  <div class="doc-grid">
-    <div class="doc-img-wrap reveal">
-      <div class="doc-img-bg"></div>
-      <div class="doc-img">
-        <!--
-        ┌──────────────────────────────────────────────────────────────────────┐
-        │  DOCTOR PHOTO  Replace src with your Cloudinary URL                 │
-        │  Recommended: 600 × 750 px (portrait, 4:5 ratio) — JPG or WebP     │
-        │  URL: https://res.cloudinary.com/YOUR_CLOUD/image/upload/dr.jpg     │
-        └──────────────────────────────────────────────────────────────────────┘
-        -->
-        <img src="https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/dr-jakaria.jpg"
-             alt="Dr. S Al Jakaria"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-        <div class="doc-placeholder" style="display:none">
-          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#006A70" stroke-width="1"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          <span>Upload Doctor Photo</span>
-        </div>
-      </div>
-    </div>
-    <div class="reveal d2">
-      <span class="eyebrow">Meet the Doctor</span>
-      <div class="cred-row">
-        <span class="badge">BDS</span>
-        <span class="badge">Dental Surgeon</span>
-        <span class="badge">8 Yrs Experience</span>
-      </div>
-      <h2>Dr. S Al Jakaria</h2>
-      <p class="doc-title">Dental Surgeon &amp; Founder, Smile Dental Care</p>
-      <p>Dr. S Al Jakaria is a dedicated and compassionate dental surgeon with over <strong>8 years of hands-on clinical experience</strong> in general and cosmetic dentistry. A proud BDS graduate, Dr. Jakaria founded Smile Dental Care with a singular vision — to make high-quality, patient-centred dental treatment accessible to the people of Guwahati.</p>
-      <p>Known for his calm, reassuring chairside manner, he takes time to understand each patient's unique needs before recommending treatment. He continuously updates his skills in the latest techniques — from orthodontics and implantology to cosmetic procedures — ensuring every patient receives the very best care available.</p>
-      <p style="margin-bottom:0">
-        <svg style="display:inline;margin-right:6px;vertical-align:middle" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B67E4D" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <a href="mailto:drjakaria1993@gmail.com" style="color:var(--accent)">drjakaria1993@gmail.com</a>
+<!-- ═══════════════════════════════════════════════════════
+     SERVICES
+═══════════════════════════════════════════════════════ -->
+<section id="services" class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="eyebrow t-label" data-reveal>What We Offer</p>
+      <h2 class="section-title" data-reveal data-delay="1">
+        Comprehensive Care,<br/><em>Expertly Delivered</em>
+      </h2>
+      <p class="section-desc t-body" data-reveal data-delay="2">
+        From your first check-up to complex restorative work — every treatment is tailored to you, delivered with precision and genuine care.
       </p>
-      <div class="doc-stats">
-        <div class="dstat"><div class="dstat-n">8+</div><div class="dstat-l">Years Exp.</div></div>
-        <div class="dstat"><div class="dstat-n">500+</div><div class="dstat-l">Patients</div></div>
-        <div class="dstat"><div class="dstat-n">20+</div><div class="dstat-l">Treatments</div></div>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-tile" data-reveal data-delay="1">
+        <div class="service-num">01</div>
+        <div class="service-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 2C8 2 4 5 4 9c0 3 1 5 2.5 7.5S9 22 9.5 23c.3.7 1 1.2 1.8.8.8-.4.8-1.8 1-3 .2-1.2.5-3 .7-3s.5 1.8.7 3c.2 1.2.2 2.6 1 3 .8.4 1.5-.1 1.8-.8.5-1 2-3 3.5-6.5S20 12 20 9c0-4-4-7-8-7z"/>
+          </svg>
+        </div>
+        <div class="service-name">General Dentistry</div>
+        <p class="service-desc">Routine cleanings, fillings, extractions and preventive care to keep your teeth healthy for life.</p>
+      </div>
+
+      <div class="service-tile" data-reveal data-delay="2">
+        <div class="service-num">02</div>
+        <div class="service-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+        </div>
+        <div class="service-name">Teeth Whitening</div>
+        <p class="service-desc">Professional-grade whitening that brightens your smile safely, effectively, and lastingly.</p>
+      </div>
+
+      <div class="service-tile" data-reveal data-delay="3">
+        <div class="service-num">03</div>
+        <div class="service-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div class="service-name">Orthodontics</div>
+        <p class="service-desc">Braces and clear aligners to correct misalignment and give you a confident, beautiful smile.</p>
+      </div>
+
+      <div class="service-tile" data-reveal data-delay="1">
+        <div class="service-num">04</div>
+        <div class="service-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
+            <rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
+          </svg>
+        </div>
+        <div class="service-name">Dental Implants</div>
+        <p class="service-desc">Permanent, natural-looking tooth replacements that restore full function, beauty and confidence.</p>
+      </div>
+
+      <div class="service-tile" data-reveal data-delay="2">
+        <div class="service-num">05</div>
+        <div class="service-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+          </svg>
+        </div>
+        <div class="service-name">Paediatric Dentistry</div>
+        <p class="service-desc">Gentle, child-friendly dental care in a warm environment that helps young patients feel safe.</p>
+      </div>
+
+      <div class="service-tile" data-reveal data-delay="3">
+        <div class="service-num">06</div>
+        <div class="service-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <div class="service-name">Emergency Care</div>
+        <p class="service-desc">Same-day treatment for toothaches, broken teeth and urgent dental emergencies — we're here.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     DOCTOR
+═══════════════════════════════════════════════════════ -->
+<section id="doctor" class="section">
+  <div class="section-inner">
+    <div class="doctor-layout">
+
+      <!-- Photo side -->
+      <div class="doctor-photo-side" data-reveal="left">
+        <!--
+        ┌──────────────────────────────────────────────────────────────────┐
+        │  DOCTOR PHOTO — Upload to Cloudinary and replace src below      │
+        │  Recommended: 700 × 800 px  (portrait, approx. 7:8 ratio)      │
+        │  Format: JPG or WebP                                             │
+        │  URL: https://res.cloudinary.com/YOUR_CLOUD/image/upload/dr.jpg │
+        └──────────────────────────────────────────────────────────────────┘
+        -->
+        <img
+          src="https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/dr-jakaria.jpg"
+          alt="Dr. S Al Jakaria – Dental Surgeon"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        />
+        <div class="doctor-photo-placeholder" style="display:none;">
+          <svg width="90" height="90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8">
+            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          <p>Upload Doctor Photo via Cloudinary<br/>Recommended: 700 × 800 px</p>
+        </div>
+        <!-- Overlay badge at bottom of photo -->
+        <div class="doctor-photo-badge">
+          <span class="badge-icon">🦷</span>
+          <div class="badge-text">
+            <h4>Dr. S Al Jakaria</h4>
+            <p>BDS · Dental Surgeon · 8 Years Experience</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info side (dark) -->
+      <div class="doctor-info-side" data-reveal="right">
+        <p class="eyebrow t-label">Meet the Doctor</p>
+        <div class="doctor-creds">
+          <span class="doc-badge">BDS</span>
+          <span class="doc-badge">Dental Surgeon</span>
+          <span class="doc-badge">8 Years Experience</span>
+        </div>
+        <h2 class="doctor-name">Dr. S Al Jakaria</h2>
+        <p class="doctor-title-text">Founder &amp; Chief Dental Surgeon, Smile Dental Care</p>
+
+        <p class="doctor-bio">
+          Dr. S Al Jakaria is a dedicated and compassionate dental surgeon with over <strong style="color:rgba(255,255,255,0.9)">8 years of hands-on clinical experience</strong> in general, restorative, and cosmetic dentistry. Armed with a BDS degree, Dr. Jakaria founded Smile Dental Care with a singular vision — to make exceptional dental care accessible to every patient in Guwahati.
+        </p>
+        <p class="doctor-bio">
+          Renowned for his calm, reassuring chairside manner, Dr. Jakaria takes genuine time with each patient before recommending any treatment. He pursues continuing dental education regularly, keeping himself at the cutting edge of orthodontics, implantology, and aesthetic dentistry. Whether attending to a nervous child or performing a complex restorative procedure, his commitment to painless, precise, and honest care never wavers.
+        </p>
+
+        <a href="mailto:drjakaria1993@gmail.com" class="doctor-email">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          drjakaria1993@gmail.com
+        </a>
+
+        <div class="doctor-stats">
+          <div class="doc-stat">
+            <div class="doc-stat-n">8+</div>
+            <div class="doc-stat-l">Years Exp.</div>
+          </div>
+          <div class="doc-stat">
+            <div class="doc-stat-n">500+</div>
+            <div class="doc-stat-l">Patients</div>
+          </div>
+          <div class="doc-stat">
+            <div class="doc-stat-n">20+</div>
+            <div class="doc-stat-l">Treatments</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     WHY US
+═══════════════════════════════════════════════════════ -->
+<section id="why">
+  <div class="section-inner" style="max-width:1200px;margin:0 auto">
+    <div class="why-top" data-reveal="scale">
+      <!-- Left headline -->
+      <div class="why-left">
+        <p class="eyebrow t-label" style="color:rgba(255,255,255,0.5)">Why Choose Us</p>
+        <h2 class="why-headline">
+          Dentistry that<br/><em>puts you first</em>
+        </h2>
+        <p class="why-desc">We're not just another dental clinic. Every decision we make is guided by one question: what's best for this patient?</p>
+      </div>
+      <!-- Right 2×2 grid -->
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-icon">🎓</div>
+          <h3>Qualified &amp; Expert</h3>
+          <p>Dr. Jakaria's 8 years of clinical experience paired with continuous professional development.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">🏥</div>
+          <h3>Modern Equipment</h3>
+          <p>Up-to-date dental technology and fully sterilised instruments for safe, precise treatments.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">💰</div>
+          <h3>Transparent Pricing</h3>
+          <p>Honest, competitive rates — no hidden costs, no upselling. Just the care you actually need.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">❤️</div>
+          <h3>Patient-First Always</h3>
+          <p>We listen. We explain. We make sure you're completely at ease at every step.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ WHY US ═══════════ -->
-<section id="why">
-  <div class="why-inner">
-    <div class="why-hd reveal">
-      <span class="eyebrow">Why Choose Us</span>
-      <h2>Dentistry That Puts You First</h2>
-      <p>We're not just another dental clinic — here's what makes Smile Dental Care different.</p>
-    </div>
-    <div class="why-grid">
-      <div class="why-card reveal d1"><div class="w-icon">🎓</div><h3>Qualified &amp; Experienced</h3><p>Dr. Jakaria brings 8 years of clinical expertise and stays updated with the latest dental advancements.</p></div>
-      <div class="why-card reveal d2"><div class="w-icon">🏥</div><h3>Modern Equipment</h3><p>Up-to-date dental technology and fully sterilised instruments for safe, precise treatments.</p></div>
-      <div class="why-card reveal d3"><div class="w-icon">💰</div><h3>Affordable Pricing</h3><p>Transparent, competitive pricing — quality dental care without breaking the bank.</p></div>
-      <div class="why-card reveal d4"><div class="w-icon">❤️</div><h3>Patient-Centred Care</h3><p>We listen, explain, and ensure you're comfortable at every step of your dental journey.</p></div>
-    </div>
-  </div>
-</section>
 
-<!-- ═══════════ APPOINTMENT ═══════════ -->
-<section id="appointment">
-  <div class="appt-inner">
-    <div class="reveal">
-      <span class="eyebrow">Book Your Visit</span>
-      <h2>Schedule an Appointment</h2>
+<!-- ═══════════════════════════════════════════════════════
+     APPOINTMENT
+═══════════════════════════════════════════════════════ -->
+<section id="appointment" class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="eyebrow t-label" data-reveal>Book Your Visit</p>
+      <h2 class="section-title" data-reveal data-delay="1">
+        Schedule an<br/><em>Appointment</em>
+      </h2>
     </div>
-    <div class="appt-grid">
-      <!-- LEFT -->
-      <div class="appt-left reveal">
-        <h3>We'd love to see your smile!</h3>
-        <p>Fill in the form. Your request will be <strong>automatically sent to the clinic via email and WhatsApp</strong>. We'll confirm your slot within a few hours.</p>
-        <div class="clist">
-          <a href="tel:+918822363706" class="citem"><span class="cicon">📞</span><span>+91 88223 63706</span></a>
-          <a href="mailto:drjakaria1993@gmail.com" class="citem"><span class="cicon">✉️</span><span>drjakaria1993@gmail.com</span></a>
-          <a href="https://wa.me/918822363706" target="_blank" class="citem"><span class="cicon">💬</span><span>WhatsApp Us Directly</span></a>
-          <div class="citem"><span class="cicon">📍</span><span>AK Dev Road, Katahbari, Near Kabristan, Guwahati – 781035</span></div>
-          <div class="citem"><span class="cicon">🕐</span><span>10AM–2PM &amp; 4PM–8PM · 7 days a week</span></div>
+
+    <div class="appt-layout">
+
+      <!-- LEFT: Info panel -->
+      <div class="appt-info-side" data-reveal="left">
+        <h3>We'd love to see your smile.</h3>
+        <p>Fill in the form and your request will be automatically sent to the clinic via <strong>email</strong> and <strong>WhatsApp</strong>. We'll confirm your slot within a few hours.</p>
+
+        <div class="contact-list">
+          <a href="tel:+918822363706" class="contact-row">
+            <span class="ci">📞</span>
+            <span>+91 88223 63706</span>
+          </a>
+          <a href="mailto:drjakaria1993@gmail.com" class="contact-row">
+            <span class="ci">✉️</span>
+            <span>drjakaria1993@gmail.com</span>
+          </a>
+          <a href="https://wa.me/918822363706" target="_blank" rel="noopener" class="contact-row">
+            <span class="ci">💬</span>
+            <span>WhatsApp Directly</span>
+          </a>
+          <div class="contact-row">
+            <span class="ci">📍</span>
+            <span>AK Dev Road, Katahbari,<br/>Near Kabristan, Guwahati – 781035</span>
+          </div>
+          <div class="contact-row">
+            <span class="ci">🕐</span>
+            <span>10AM–2PM &amp; 4PM–8PM · 7 days a week</span>
+          </div>
         </div>
-        <div class="gcal-box">
+
+        <div class="gcal-info-box">
           <h4>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-            How does the Google Calendar work?
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+            How does the calendar work?
           </h4>
-          <p>The calendar in the form shows <strong>already-booked slots</strong> marked by the clinic. Dr. Jakaria manages appointments directly from his Google Calendar app — any confirmed booking he adds appears here in real time. Once your request arrives, the dentist adds your confirmed slot to his calendar and notifies you via WhatsApp or phone.</p>
+          <p>
+            The calendar in the form shows <strong>already-confirmed bookings</strong> managed by Dr. Jakaria directly in his Google Calendar app. Any slot he confirms appears here in real time — so you can see what's taken before picking your preferred time. Once your request is received, he'll add your confirmed slot and notify you via WhatsApp or phone.
+          </p>
         </div>
       </div>
 
       <!-- RIGHT: Form -->
-      <div class="appt-form reveal d2">
+      <div class="appt-form-card" data-reveal="right">
         <h3>Request an Appointment</h3>
 
         <!-- Google Calendar embed -->
-        <span class="cal-lbl">📅 View Availability</span>
-        <div class="cal-wrap">
-          <!--
-          ╔══════════════════════════════════════════════════════════════════════╗
-          ║  GOOGLE CALENDAR EMBED — HOW TO SET UP                              ║
-          ║  1. Dr. Jakaria creates a Google Calendar named "Smile Dental Care" ║
-          ║  2. Settings → [Select the calendar] → Integrate Calendar           ║
-          ║  3. Make it PUBLIC (so the embed works without login)               ║
-          ║  4. Copy the "Public URL to this calendar" (looks like:             ║
-          ║     xxxxxxx@group.calendar.google.com)                              ║
-          ║  5. Replace REPLACE_WITH_CALENDAR_ID in the src below              ║
-          ║     (URL-encoded: replace @ with %40)                               ║
-          ║                                                                      ║
-          ║  Example src:                                                        ║
-          ║  https://calendar.google.com/calendar/embed?src=abc123%40group.    ║
-          ║  calendar.google.com&ctz=Asia%2FKolkata&mode=WEEK&showTitle=0...   ║
-          ╚══════════════════════════════════════════════════════════════════════╝
-          -->
-          <iframe
-            src="https://calendar.google.com/calendar/embed?src=REPLACE_WITH_CALENDAR_ID%40group.calendar.google.com&ctz=Asia%2FKolkata&mode=WEEK&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0"
-            frameborder="0" scrolling="no" title="Appointment Availability">
-          </iframe>
+        <div class="cal-section">
+          <span class="cal-label-row">📅 Check Availability</span>
+          <div class="cal-frame-wrap">
+            <!--
+            ╔══════════════════════════════════════════════════════════════════════╗
+            ║  GOOGLE CALENDAR EMBED — SETUP STEPS                                ║
+            ║                                                                      ║
+            ║  Step 1: Dr. Jakaria opens calendar.google.com                     ║
+            ║  Step 2: Create a new calendar "Smile Dental Appointments"          ║
+            ║  Step 3: Settings → [Click the new calendar] → Integrate Calendar  ║
+            ║  Step 4: Under "Access permissions" → tick "Make available to public"║
+            ║  Step 5: Copy the "Calendar ID" (looks like:                        ║
+            ║          xxxxxxxxxx@group.calendar.google.com)                      ║
+            ║  Step 6: In the src URL below, replace:                             ║
+            ║          REPLACE_WITH_CALENDAR_ID                                   ║
+            ║          with the Calendar ID (replace @ with %40 in the URL)      ║
+            ║                                                                      ║
+            ║  Example result:                                                     ║
+            ║  src="https://calendar.google.com/calendar/embed?src=abc123%40    ║
+            ║  group.calendar.google.com&ctz=Asia%2FKolkata&mode=WEEK&..."       ║
+            ╚══════════════════════════════════════════════════════════════════════╝
+            -->
+            <iframe
+              src="https://calendar.google.com/calendar/embed?src=REPLACE_WITH_CALENDAR_ID%40group.calendar.google.com&ctz=Asia%2FKolkata&mode=WEEK&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0"
+              frameborder="0"
+              scrolling="no"
+              title="Appointment Availability Calendar">
+            </iframe>
+          </div>
+          <p class="cal-hint">Booked slots appear on the calendar above. Choose a free time slot below.</p>
         </div>
-        <p style="font-size:12px;color:var(--text-soft);margin-top:-10px;margin-bottom:20px">Booked slots appear on the calendar. Select an available time below.</p>
 
-        <div class="frow">
-          <div class="fg"><label>Full Name *</label><input type="text" id="f_name" placeholder="e.g. Rahul Das" required/></div>
-          <div class="fg"><label>Age *</label><input type="number" id="f_age" placeholder="e.g. 28" min="1" max="120" required/></div>
-        </div>
-        <div class="fg">
-          <label>Gender *</label>
-          <div class="radio-row">
-            <label class="radio-opt"><input type="radio" name="gender" value="Male" required/> Male</label>
-            <label class="radio-opt"><input type="radio" name="gender" value="Female"/> Female</label>
-            <label class="radio-opt"><input type="radio" name="gender" value="Other"/> Other</label>
+        <!-- Name + Age -->
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Full Name *</label>
+            <input type="text" id="f_name" placeholder="e.g. Rahul Das" required/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Age *</label>
+            <input type="number" id="f_age" placeholder="e.g. 28" min="1" max="120" required/>
           </div>
         </div>
-        <div class="frow">
-          <div class="fg"><label>Phone *</label><input type="tel" id="f_phone" placeholder="+91 XXXXX XXXXX" required/></div>
-          <div class="fg"><label>Email (optional)</label><input type="email" id="f_email" placeholder="you@email.com"/></div>
+
+        <!-- Gender -->
+        <div class="form-group">
+          <label class="form-label">Gender *</label>
+          <div class="radio-set">
+            <label class="radio-label"><input type="radio" name="gender" value="Male" required/> Male</label>
+            <label class="radio-label"><input type="radio" name="gender" value="Female"/> Female</label>
+            <label class="radio-label"><input type="radio" name="gender" value="Other"/> Other</label>
+          </div>
         </div>
-        <div class="fg">
-          <label>Treatment Required *</label>
+
+        <!-- Phone + Email -->
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Phone Number *</label>
+            <input type="tel" id="f_phone" placeholder="+91 XXXXX XXXXX" required/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email (optional)</label>
+            <input type="email" id="f_email" placeholder="you@email.com"/>
+          </div>
+        </div>
+
+        <!-- Treatment -->
+        <div class="form-group">
+          <label class="form-label">Treatment Required *</label>
           <select id="f_treatment" required>
-            <option value="">-- Select a treatment --</option>
+            <option value="">— Select a treatment —</option>
             <option>General Checkup / Consultation</option>
             <option>Teeth Cleaning (Scaling)</option>
             <option>Teeth Whitening</option>
@@ -593,248 +560,223 @@ footer ul a:hover{color:#fff}
             <option>Other (describe in notes)</option>
           </select>
         </div>
-        <div class="frow">
-          <div class="fg"><label>Preferred Date *</label><input type="date" id="f_date" required/></div>
-          <div class="fg">
-            <label>Preferred Time *</label>
+
+        <!-- Date + Time -->
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Preferred Date *</label>
+            <input type="date" id="f_date" required/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Preferred Time *</label>
             <select id="f_time" required>
-              <option value="">-- Select --</option>
-              <optgroup label="Morning (10AM–2PM)">
-                <option>10:00 AM</option><option>10:30 AM</option><option>11:00 AM</option><option>11:30 AM</option>
-                <option>12:00 PM</option><option>12:30 PM</option><option>1:00 PM</option><option>1:30 PM</option>
+              <option value="">— Select —</option>
+              <optgroup label="Morning Session (10AM – 2PM)">
+                <option>10:00 AM</option><option>10:30 AM</option>
+                <option>11:00 AM</option><option>11:30 AM</option>
+                <option>12:00 PM</option><option>12:30 PM</option>
+                <option>1:00 PM</option> <option>1:30 PM</option>
               </optgroup>
-              <optgroup label="Evening (4PM–8PM)">
-                <option>4:00 PM</option><option>4:30 PM</option><option>5:00 PM</option><option>5:30 PM</option>
-                <option>6:00 PM</option><option>6:30 PM</option><option>7:00 PM</option><option>7:30 PM</option>
+              <optgroup label="Evening Session (4PM – 8PM)">
+                <option>4:00 PM</option><option>4:30 PM</option>
+                <option>5:00 PM</option><option>5:30 PM</option>
+                <option>6:00 PM</option><option>6:30 PM</option>
+                <option>7:00 PM</option><option>7:30 PM</option>
               </optgroup>
             </select>
           </div>
         </div>
-        <div class="fg"><label>Additional Notes</label><textarea id="f_notes" placeholder="Describe your concern, any pain, relevant medical history..."></textarea></div>
 
-        <button class="f-submit" id="submitBtn" onclick="submitForm()">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        <!-- Notes -->
+        <div class="form-group" style="margin-bottom:24px">
+          <label class="form-label">Additional Notes</label>
+          <textarea id="f_notes" placeholder="Describe your concern, any pain, relevant medical history…"></textarea>
+        </div>
+
+        <button class="form-submit-btn" id="submitBtn" type="button">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
           Send Appointment Request
         </button>
-        <p class="f-note">Your request is sent to the clinic via <strong>email &amp; WhatsApp</strong>.<br/>We'll confirm within a few hours.</p>
-        <div class="f-success" id="fSuccess">✅ <strong>Request sent successfully!</strong><br/>We've received your details and will confirm via WhatsApp or phone call shortly. You can also reach us at <strong>+91 88223 63706</strong>.</div>
-        <div class="f-error" id="fError">⚠️ Something went wrong. Please call us at +91 88223 63706 or WhatsApp directly.</div>
+
+        <p class="form-note">
+          Your request is sent to the clinic via <strong>email &amp; WhatsApp</strong>.<br/>
+          Confirmation within a few hours at +91 88223 63706.
+        </p>
+
+        <div class="form-msg-success" id="formSuccess">
+          ✅ <strong>Request received!</strong> We'll confirm your appointment via WhatsApp or phone shortly.
+          You can also reach us directly at <strong>+91 88223 63706</strong>.
+        </div>
+        <div class="form-msg-error" id="formError">
+          ⚠️ Something went wrong. Please call us at +91 88223 63706 or WhatsApp directly.
+        </div>
+
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ LOCATION ═══════════ -->
-<section id="location">
-  <div class="loc-inner">
-    <div class="reveal"><span class="eyebrow">Find Us</span><h2>Visit Our Clinic</h2></div>
-    <div class="loc-grid">
-      <div class="loc-items reveal">
-        <div class="litem"><div class="licon">📍</div><div><h4>Address</h4><p>AK Dev Road, Katahbari,<br/>Near Kabristan,<br/>Guwahati – 781035, Assam</p></div></div>
-        <div class="litem"><div class="licon">🕐</div><div><h4>Clinic Hours</h4><p>Morning: 10:00 AM – 2:00 PM<br/>Evening: 4:00 PM – 8:00 PM<br/>Open 7 days a week</p></div></div>
-        <div class="litem"><div class="licon">📞</div><div><h4>Phone</h4><a href="tel:+918822363706">+91 88223 63706</a></div></div>
-        <div class="litem"><div class="licon">✉️</div><div><h4>Email</h4><a href="mailto:drjakaria1993@gmail.com">drjakaria1993@gmail.com</a></div></div>
-        <div class="litem"><div class="licon">🚗</div><div><h4>Getting Here</h4><p>Easily accessible from Maligaon and Jalukbari. Located on AK Dev Road, near Katahbari Kabristan.</p></div></div>
+
+<!-- ═══════════════════════════════════════════════════════
+     LOCATION
+═══════════════════════════════════════════════════════ -->
+<section id="location" class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="eyebrow t-label" data-reveal>Find Us</p>
+      <h2 class="section-title" data-reveal data-delay="1">Visit Our <em>Clinic</em></h2>
+    </div>
+    <div class="location-layout">
+
+      <div class="loc-info" data-reveal="left">
+        <div class="loc-item">
+          <div class="loc-icon">📍</div>
+          <div class="loc-item-text">
+            <h4>Address</h4>
+            <p>AK Dev Road, Katahbari,<br/>Near Kabristan,<br/>Guwahati – 781035, Assam</p>
+          </div>
+        </div>
+        <div class="loc-item">
+          <div class="loc-icon">🕐</div>
+          <div class="loc-item-text">
+            <h4>Clinic Hours</h4>
+            <p>Morning: 10:00 AM – 2:00 PM<br/>Evening: 4:00 PM – 8:00 PM<br/>Open 7 days a week</p>
+          </div>
+        </div>
+        <div class="loc-item">
+          <div class="loc-icon">📞</div>
+          <div class="loc-item-text">
+            <h4>Phone</h4>
+            <a href="tel:+918822363706">+91 88223 63706</a>
+          </div>
+        </div>
+        <div class="loc-item">
+          <div class="loc-icon">✉️</div>
+          <div class="loc-item-text">
+            <h4>Email</h4>
+            <a href="mailto:drjakaria1993@gmail.com">drjakaria1993@gmail.com</a>
+          </div>
+        </div>
+        <div class="loc-item">
+          <div class="loc-icon">🚗</div>
+          <div class="loc-item-text">
+            <h4>Getting Here</h4>
+            <p>Easily accessible from Maligaon and Jalukbari. Look for the clinic on AK Dev Road near Katahbari Kabristan.</p>
+          </div>
+        </div>
       </div>
-      <div class="map-box reveal d2">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9014.64942319532!2d91.72134062679615!3d26.125021044835627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375a5dd4cc01f4f5%3A0xabcb2796bb792552!2sSmile%20Dental%20care!5e0!3m2!1sen!2sin!4v1774871351693!5m2!1sen!2sin" 
-          width="600" 
-          height="450" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade">
+
+      <div class="map-container" data-reveal="right">
+        <!--
+        ╔══════════════════════════════════════════════════════════════════════╗
+        ║  GOOGLE MAPS EMBED                                                   ║
+        ║  1. Go to maps.google.com → search "Smile Dental Care, AK Dev Road, ║
+        ║     Katahbari, Guwahati" (or pin exact location)                    ║
+        ║  2. Click Share → "Embed a map" tab                                 ║
+        ║  3. Copy the entire <iframe> HTML code                              ║
+        ║  4. REPLACE THE ENTIRE <iframe> BELOW with your copied code        ║
+        ╚══════════════════════════════════════════════════════════════════════╝
+        -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14329.04!2d91.6560!3d26.1450!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375a5915c44fadc7%3A0x9b388ed38b7b1f0b!2sKatahbari%2C%20Guwahati%2C%20Assam!5e0!3m2!1sen!2sin!4v1700000000000"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Smile Dental Care – Location">
         </iframe>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- ═══════════ FOOTER ═══════════ -->
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════ -->
 <footer>
-  <div class="ft-grid">
-    <div class="ft-brand">
-      <img src="https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/smile-dental-logo.png"
-           alt="Smile Dental Care" class="ft-logo"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
-      <div class="ft-logo-txt">Smile Dental Care</div>
-      <p>Your trusted dental care partner in Guwahati — committed to your smile, your health, and your confidence.</p>
+  <div class="footer-inner">
+    <div class="footer-top">
+
+      <div class="ft-brand">
+        <img
+          src="https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/smile-dental-logo.png"
+          alt="Smile Dental Care" class="ft-logo-img"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+        />
+        <div class="ft-logo-txt">Smile Dental Care</div>
+        <p>Your trusted dental care partner in Guwahati — committed to your smile, your health, and your confidence.</p>
+        <div class="ft-socials">
+          <a href="#" class="ft-social" aria-label="Facebook">f</a>
+          <a href="#" class="ft-social" aria-label="Instagram">ig</a>
+          <a href="https://wa.me/918822363706" target="_blank" class="ft-social" aria-label="WhatsApp">w</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">General Dentistry</a></li>
+          <li><a href="#services">Teeth Whitening</a></li>
+          <li><a href="#services">Orthodontics</a></li>
+          <li><a href="#services">Dental Implants</a></li>
+          <li><a href="#services">Paediatric Dentistry</a></li>
+          <li><a href="#services">Emergency Care</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+918822363706">+91 88223 63706</a></li>
+          <li><a href="mailto:drjakaria1993@gmail.com">drjakaria1993@gmail.com</a></li>
+          <li><a href="https://wa.me/918822363706" target="_blank">WhatsApp</a></li>
+          <li><a href="#location">AK Dev Road, Katahbari</a></li>
+          <li><a href="#location">Guwahati – 781035</a></li>
+          <li><a href="#appointment">Book Appointment</a></li>
+        </ul>
+      </div>
+
     </div>
-    <div>
-      <h4>Services</h4>
-      <ul>
-        <li><a href="#services">General Dentistry</a></li>
-        <li><a href="#services">Teeth Whitening</a></li>
-        <li><a href="#services">Orthodontics</a></li>
-        <li><a href="#services">Dental Implants</a></li>
-        <li><a href="#services">Paediatric Dentistry</a></li>
-        <li><a href="#services">Emergency Care</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="tel:+918822363706">+91 88223 63706</a></li>
-        <li><a href="mailto:drjakaria1993@gmail.com">drjakaria1993@gmail.com</a></li>
-        <li><a href="https://wa.me/918822363706" target="_blank">WhatsApp</a></li>
-        <li><a href="#location">AK Dev Road, Katahbari</a></li>
-        <li><a href="#location">Guwahati – 781035</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="ft-bottom">
-    <p>© 2025 Smile Dental Care, Guwahati. All rights reserved.</p>
-    <div class="socials">
-      <a href="#" class="soc" aria-label="Facebook">f</a>
-      <a href="#" class="soc" aria-label="Instagram">ig</a>
-      <a href="https://wa.me/918822363706" class="soc" aria-label="WhatsApp">w</a>
+
+    <div class="footer-bottom">
+      <p>© 2025 Smile Dental Care, Guwahati. All rights reserved.</p>
+      <p>Crafted with care for better smiles in Guwahati.</p>
     </div>
   </div>
 </footer>
 
-<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+
+<!-- ═══════════════════════════════════════════════════════
+     FLOATING BUTTONS
+═══════════════════════════════════════════════════════ -->
+
+<!-- WhatsApp — bottom right, glowing -->
+<a
+  href="https://wa.me/918822363706?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20Smile%20Dental%20Care."
+  target="_blank"
+  rel="noopener"
+  class="wa-float"
+  aria-label="Chat on WhatsApp"
+>
+  <div class="wa-tooltip">Chat on WhatsApp</div>
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- Scroll to top — bottom left -->
+<button id="scrollTopBtn" aria-label="Scroll to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <polyline points="18 15 12 9 6 15"/>
+  </svg>
 </button>
 
-<!-- ══════════════════════════════════════════════
-     SCRIPTS
-══════════════════════════════════════════════ -->
-<script>
-/* ── EmailJS Setup ───────────────────────────────────────────────────────
-   HOW TO SET UP (FREE — 200 emails/month on free plan):
 
-   STEP 1: Create account at https://www.emailjs.com
+<!-- JS -->
+<script src="main.js"></script>
 
-   STEP 2: Add Email Service
-     → Dashboard → Email Services → Add Service
-     → Choose Gmail → Connect drjakaria1993@gmail.com
-     → Note your Service ID (e.g. "service_abc123")
-
-   STEP 3: Create Email Template
-     → Dashboard → Email Templates → Create New Template
-     → Set "To Email" to: drjakaria1993@gmail.com
-     → Subject: New Appointment Request – {{patient_name}}
-     → Body: use the variables below in your template:
-         Name: {{patient_name}}
-         Age: {{age}} | Gender: {{gender}}
-         Phone: {{phone}} | Email: {{email}}
-         Treatment: {{treatment}}
-         Date: {{date}} | Time: {{time}}
-         Notes: {{notes}}
-     → Note your Template ID (e.g. "template_xyz789")
-
-   STEP 4: Get your Public Key
-     → Dashboard → Account → General → Public Key
-
-   STEP 5: Replace the 3 values below:
-   ──────────────────────────────────────────────────────────────────────── */
-emailjs.init('YOUR_EMAILJS_PUBLIC_KEY');       // ← Replace
-const EJ_SERVICE  = 'YOUR_SERVICE_ID';         // ← Replace
-const EJ_TEMPLATE = 'YOUR_TEMPLATE_ID';        // ← Replace
-
-/* ── Hero Slider ──────────────────────────────────────────────── */
-const slides = document.querySelectorAll('.slide');
-const dotsEl = document.getElementById('heroDots');
-let cur = 0, timer;
-
-slides.forEach((_, i) => {
-  const b = document.createElement('button');
-  b.className = 'dot-btn' + (i === 0 ? ' active' : '');
-  b.setAttribute('aria-label', 'Slide ' + (i + 1));
-  b.onclick = () => goTo(i);
-  dotsEl.appendChild(b);
-});
-
-function goTo(n) {
-  slides[cur].classList.remove('active');
-  dotsEl.children[cur].classList.remove('active');
-  cur = n;
-  slides[cur].classList.add('active');
-  dotsEl.children[cur].classList.add('active');
-  clearInterval(timer); startSlider();
-}
-function startSlider() { timer = setInterval(() => goTo((cur+1)%slides.length), 5000); }
-startSlider();
-
-/* ── Navbar + scroll top ──────────────────────────────────────── */
-const nb = document.getElementById('navbar');
-const st = document.getElementById('scrollTop');
-window.addEventListener('scroll', () => {
-  nb.classList.toggle('scrolled', window.scrollY > 60);
-  st.classList.toggle('show', window.scrollY > 500);
-});
-
-/* ── Mobile nav ───────────────────────────────────────────────── */
-function mobNavToggle() { document.getElementById('mobNav').classList.toggle('open'); }
-
-/* ── Scroll reveal ────────────────────────────────────────────── */
-const ro = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.08 });
-document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
-
-/* ── Open/Closed status ───────────────────────────────────────── */
-function checkOpen() {
-  const now = new Date(), m = now.getHours()*60+now.getMinutes();
-  const open = (m>=600&&m<840)||(m>=960&&m<1200);
-  const pill = document.getElementById('openPill');
-  const txt  = document.getElementById('openTxt');
-  pill.className = 'open-pill ' + (open ? 'open' : 'closed');
-  txt.textContent = open ? 'Open Now' : 'Currently Closed';
-}
-checkOpen(); setInterval(checkOpen, 60000);
-
-/* ── Min date ─────────────────────────────────────────────────── */
-document.getElementById('f_date').min = new Date().toISOString().split('T')[0];
-
-/* ── Form Submit ──────────────────────────────────────────────── */
-async function submitForm() {
-  const name  = document.getElementById('f_name').value.trim();
-  const age   = document.getElementById('f_age').value.trim();
-  const gEl   = document.querySelector('input[name="gender"]:checked');
-  const phone = document.getElementById('f_phone').value.trim();
-  const email = document.getElementById('f_email').value.trim();
-  const treat = document.getElementById('f_treatment').value;
-  const date  = document.getElementById('f_date').value;
-  const time  = document.getElementById('f_time').value;
-  const notes = document.getElementById('f_notes').value.trim();
-
-  if (!name||!age||!gEl||!phone||!treat||!date||!time) {
-    alert('Please fill in all required fields (marked with *).');
-    return;
-  }
-
-  const btn = document.getElementById('submitBtn');
-  btn.disabled = true;
-  btn.innerHTML = '<div class="spinner"></div> Sending...';
-
-  const params = {
-    patient_name: name, age, gender: gEl.value, phone,
-    email: email||'Not provided', treatment: treat,
-    date, time, notes: notes||'None'
-  };
-
-  // Send email
-  let ok = false;
-  try { await emailjs.send(EJ_SERVICE, EJ_TEMPLATE, params); ok = true; }
-  catch(e) { console.warn('EmailJS:', e); }
-
-  // Open WhatsApp with formatted message
-  const msg = `🦷 *New Appointment – Smile Dental Care*\n\n👤 *Name:* ${name}\n🎂 *Age:* ${age}\n⚧ *Gender:* ${gEl.value}\n📞 *Phone:* ${phone}\n${email?'✉️ *Email:* '+email+'\n':''}💉 *Treatment:* ${treat}\n📅 *Date:* ${date}\n🕐 *Time:* ${time}\n${notes?'📝 *Notes:* '+notes:''}`;
-  window.open('https://wa.me/918822363706?text='+encodeURIComponent(msg), '_blank');
-
-  btn.disabled = false;
-  btn.innerHTML = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Appointment Request';
-
-  document.getElementById('fSuccess').style.display = 'block';
-  document.getElementById('fError').style.display   = 'none';
-  document.getElementById('fSuccess').scrollIntoView({behavior:'smooth',block:'nearest'});
-
-  // Reset
-  setTimeout(() => {
-    ['f_name','f_age','f_phone','f_email','f_treatment','f_date','f_time','f_notes'].forEach(id => document.getElementById(id).value='');
-    if(document.querySelector('input[name="gender"]:checked')) document.querySelector('input[name="gender"]:checked').checked=false;
-  }, 800);
-}
-</script>
 </body>
 </html>
